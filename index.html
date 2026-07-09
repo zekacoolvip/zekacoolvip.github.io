@@ -3,81 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeko Software Studio - الموقع الرسمي</title>
+    
+    <title>Zeko Software Studio | Professional Automation & Gaming Tools</title>
+    <meta name="description" content="Zeko Software Studio - المطور الأول لأدوات الأتمتة الاحترافية، ومراقبة الأنظمة، والماكرو الذكي للألعاب مثل Clicker Pro و Zeko Trigger و Zeko Monitor.">
+    <meta name="keywords" content="Zeko Trigger, Zeko Monitor, Clicker Pro, gaming macro, automation tools, CPU monitor, Discord zekacoolvip, برامج أتمتة, ماكرو ألعاب, كونكر بوت">
+    <meta name="author" content="Zeko">
+    
     <style>
+        /* نظام الألوان الاحترافي باستخدام CSS Variables */
+        :root {
+            --bg-color: #0d0d11;
+            --card-bg: #161622;
+            --text-color: #ffffff;
+            --muted-text: #bbc;
+            --accent-color: #00FF00;
+            --border-color: #2a2a3a;
+            --nav-bg: rgba(22, 22, 34, 0.8);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f4f4f9;
+            --card-bg: #ffffff;
+            --text-color: #121212;
+            --muted-text: #555566;
+            --accent-color: #00aa00;
+            --border-color: #ddddff;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+        }
+
         body {
-            background-color: #0d0d11;
-            color: #ffffff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
+
+        /* الهيدر والـ Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+        }
+
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-control {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 6px;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .btn-control:hover {
+            border-color: var(--accent-color);
+        }
+
         header {
-            background: linear-gradient(135deg, #1f1f2e, #0d0d11);
-            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
+            padding: 120px 20px 60px 20px;
             text-align: center;
-            border-bottom: 2px solid #00FF00;
+            border-bottom: 2px solid var(--accent-color);
         }
+
         header h1 {
-            color: #00FF00;
             font-size: 2.8rem;
             margin: 0;
-            text-shadow: 0 0 10px rgba(0,255,0,0.3);
         }
+
         header p {
-            color: #aaa;
+            color: var(--muted-text);
             font-size: 1.2rem;
             margin-top: 10px;
         }
+
         .container {
             max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
+
         .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
             gap: 25px;
+            justify-content: center;
         }
+
         .card {
-            background: #161622;
+            background: var(--card-bg);
             border-radius: 12px;
             padding: 25px;
-            border: 1px solid #2a2a3a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: 0.3s;
+            width: 290px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
+
         .card:hover {
             transform: translateY(-5px);
-            border-color: #00FF00;
-            box-shadow: 0 6px 20px rgba(0,255,0,0.1);
+            border-color: var(--accent-color);
         }
+
         .card h2 {
-            color: #fff;
             margin-top: 0;
             font-size: 1.6rem;
-            border-bottom: 1px solid #2a2a3a;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
         }
+
         .card p {
-            color: #bbc;
+            color: var(--muted-text);
             font-size: 1rem;
             line-height: 1.6;
+            min-height: 80px;
         }
+
         .badge {
             display: inline-block;
-            background: #222;
-            color: #00FF00;
+            background: var(--bg-color);
+            color: var(--accent-color);
             padding: 4px 10px;
             border-radius: 5px;
             font-size: 0.85rem;
             font-weight: bold;
             margin-bottom: 15px;
-            border: 1px solid #00FF00;
+            border: 1px solid var(--accent-color);
         }
+
         .btn-action {
             display: block;
             text-align: center;
@@ -93,72 +174,147 @@
             font-size: 1rem;
             transition: 0.3s;
         }
+
         .btn-action:hover {
             background-color: #4752c4;
+            transform: scale(1.02);
         }
+
         footer {
             text-align: center;
             padding: 40px 20px;
-            color: #666;
+            color: var(--muted-text);
             font-size: 0.9rem;
-            border-top: 1px solid #1f1f2e;
-            margin-top: 6px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="logo">ZEKO STUDIO</div>
+        <div class="nav-controls">
+            <button class="btn-control" id="langBtn" onclick="toggleLanguage()">English</button>
+            <button class="btn-control" id="themeBtn" onclick="toggleTheme()">☀️ Light</button>
+        </div>
+    </nav>
+
     <header>
-        <h1>Zeko Software Studio 🚀</h1>
-        <p>الأدوات الاحترافية المتقدمة للأتمتة، الحماية، ومراقبة موارد النظام</p>
+        <h1 id="mainTitle">Zeko Software Studio 🚀</h1>
+        <p id="mainDesc">الأدوات الاحترافية المتقدمة للأتمتة، الحماية، ومراقبة موارد النظام</p>
     </header>
 
     <div class="container">
         <div class="grid">
             
-            <!-- كارت برنامج زيكو تريجر -->
             <div class="card">
                 <div>
-                    <span class="badge">Automation Tool</span>
-                    <h2>Zeko Trigger ⚡</h2>
-                    <p>أداة الأتمتة الذكية والاحترافية لتنفيذ المهام بسرعة فائقة وتخطي أنظمة الحماية المتطورة مع إمكانية تجربة مجانية.</p>
+                    <span class="badge" id="b1">أداة أتمتة</span>
+                    <h2 id="t1">Zeko Trigger ⚡</h2>
+                    <p id="p1">أداة الأتمتة الذكية والاحترافية لتنفيذ المهام بسرعة فائقة وتخطي أنظمة الحماية المتطورة مع إمكانية تجربة مجانية مدتها دقيقتين.</p>
                 </div>
-                <button class="btn-action" onclick="copyDiscord()">📢 تواصل للشراء أو التجربة</button>
+                <button class="btn-action" onclick="copyDiscord()" id="btn1">📢 تواصل للشراء أو التجربة</button>
             </div>
 
-            <!-- كارت برنامج زيكو مونيتور -->
             <div class="card">
                 <div>
-                    <span class="badge">System Monitor</span>
-                    <h2>Zeko Monitor 📊</h2>
-                    <p>أداتك المثالية لمراقبة أداء الجهاز في الوقت الفعلي. تابع استهلاك الـ CPU، الـ GPU، والـ RAM بدقة متناهية أثناء الجيمنج.</p>
+                    <span class="badge" id="b2">مراقب نظام</span>
+                    <h2 id="t2">Zeko Monitor 📊</h2>
+                    <p id="p2">أداتك المثالية لمراقبة أداء الجهاز في الوقت الفعلي. تابع استهلاك الـ CPU، الـ GPU، والـ RAM بدقة متناهية أثناء الجيمنج وضغط العمل.</p>
                 </div>
-                <button class="btn-action" onclick="copyDiscord()">📢 اطلب الأداة الآن</button>
+                <button class="btn-action" onclick="copyDiscord()" id="btn2">📢 اطلب الأداة الآن</button>
             </div>
 
-            <!-- كارت برنامج الكليكر الجديد -->
             <div class="card">
                 <div>
-                    <span class="badge">Gaming Macro</span>
-                    <h2>Clicker Pro 🔥</h2>
-                    <p>مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.</p>
+                    <span class="badge" id="b3">ماكرو ألعاب</span>
+                    <h2 id="t3">Clicker Pro 🔥</h2>
+                    <p id="p3">مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.</p>
                 </div>
-                <button class="btn-action" onclick="copyDiscord()">📢 شراء كود التفعيل</button>
+                <button class="btn-action" onclick="copyDiscord()" id="btn3">📢 شراء كود التفعيل</button>
             </div>
 
         </div>
     </div>
 
-    <footer>
+    <footer id="footerText">
         جميع الحقوق محفوظة © Zeko Software Studio 2026
     </footer>
 
     <script>
+        // قاموس اللغات الاحترافي لتغيير المحتوى والـ SEO سريعا
+        const translations = {
+            ar: {
+                dir: "rtl",
+                lang: "ar",
+                langBtn: "English",
+                mainTitle: "Zeko Software Studio 🚀",
+                mainDesc: "الأدوات الاحترافية المتقدمة للأتمتة، الحماية، ومراقبة موارد النظام",
+                b1: "أداة أتمتة", t1: "Zeko Trigger ⚡", p1: "أداة الأتمتة الذكية والاحترافية لتنفيذ المهام بسرعة فائقة وتخطي أنظمة الحماية المتطورة مع إمكانية تجربة مجانية مدتها دقيقتين.", btn1: "📢 تواصل للشراء أو التجربة",
+                b2: "مراقب نظام", t2: "Zeko Monitor 📊", p2: "أداتك المثالية لمراقبة أداء الجهاز في الوقت الفعلي. تابع استهلاك الـ CPU، الـ GPU، والـ RAM بدقة متناهية أثناء الجيمنج وضغط العمل.", btn2: "📢 اطلب الأداة الآن",
+                b3: "ماكرو ألعاب", t3: "Clicker Pro 🔥", p3: "مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.", btn3: "📢 شراء كود التفعيل",
+                footer: "جميع الحقوق محفوظة © Zeko Software Studio 2026"
+            },
+            en: {
+                dir: "ltr",
+                lang: "en",
+                langBtn: "العربية",
+                mainTitle: "Zeko Software Studio 🚀",
+                mainDesc: "Advanced Professional Tools for Automation, Protection & System Monitoring",
+                b1: "Automation Tool", t1: "Zeko Trigger ⚡", p1: "Smart & professional automation tool designed for ultra-fast task execution, bypassing modern anti-cheats with a 2-minute trial.", btn1: "📢 Contact for Buy or Trial",
+                b2: "System Monitor", t2: "Zeko Monitor 📊", p2: "Your ultimate real-time performance monitor. Track CPU, GPU, and RAM usage with high precision during intense gaming sessions.", btn2: "📢 Order Tool Now",
+                b3: "Gaming Macro", t3: "Clicker Pro 🔥", p3: "The most powerful farming assistant for tough gaming maps. Features smart mouse click simulation with humanized random delay and Ctrl-hold feature.", btn3: "📢 Purchase License Key",
+                footer: "All Rights Reserved © Zeko Software Studio 2026"
+            }
+        };
+
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const data = translations[currentLang];
+            
+            document.documentElement.lang = data.lang;
+            document.documentElement.dir = data.dir;
+            
+            document.getElementById('langBtn').innerText = data.langBtn;
+            document.getElementById('mainTitle').innerText = data.mainTitle;
+            document.getElementById('mainDesc').innerText = data.mainDesc;
+            
+            document.getElementById('b1').innerText = data.b1;
+            document.getElementById('t1').innerText = data.t1;
+            document.getElementById('p1').innerText = data.p1;
+            document.getElementById('btn1').innerText = data.btn1;
+
+            document.getElementById('b2').innerText = data.b2;
+            document.getElementById('t2').innerText = data.t2;
+            document.getElementById('p2').innerText = data.p2;
+            document.getElementById('btn2').innerText = data.btn2;
+
+            document.getElementById('b3').innerText = data.b3;
+            document.getElementById('t3').innerText = data.t3;
+            document.getElementById('p3').innerText = data.p3;
+            document.getElementById('btn3').innerText = data.btn3;
+            
+            document.getElementById('footerText').innerText = data.footer;
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                document.getElementById('themeBtn').innerText = "☀️ Light";
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.getElementById('themeBtn').innerText = "🌙 Dark";
+            }
+        }
+
         function copyDiscord() {
             navigator.clipboard.writeText('zekacoolvip');
-            alert('تم نسخ اسم الديسكورد (zekacoolvip) بنجاح! ضيفني عشان تتواصل معايا وتستلم برنامجك.');
+            alert(currentLang === 'ar' ? 'تم نسخ اسم الديسكورد (zekacoolvip) بنجاح!' : 'Discord Username (zekacoolvip) copied successfully!');
         }
     </script>
-
 </body>
 </html>
