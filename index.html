@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- SEO Meta Tags -->
     <title>Zeko Software Studio | Professional Automation & Gaming Tools</title>
     <meta name="description" content="Zeko Software Studio - المطور الأول لأدوات الأتمتة الاحترافية، ومراقبة الأنظمة، والماكرو الذكي للألعاب مثل Clicker Pro و Zeko Trigger و Zeko Monitor.">
     <meta name="keywords" content="Zeko Trigger, Zeko Monitor, Clicker Pro, gaming macro, automation tools, CPU monitor, Discord zekacoolvip, برامج أتمتة, ماكرو ألعاب, كونكر بوت">
     <meta name="author" content="Zeko">
     
     <style>
-        /* نظام الألوان الاحترافي باستخدام CSS Variables */
         :root {
             --bg-color: #0d0d11;
             --card-bg: #161622;
@@ -19,6 +19,7 @@
             --accent-color: #00FF00;
             --border-color: #2a2a3a;
             --nav-bg: rgba(22, 22, 34, 0.8);
+            --modal-overlay: rgba(0, 0, 0, 0.8);
         }
 
         [data-theme="light"] {
@@ -29,6 +30,7 @@
             --accent-color: #00aa00;
             --border-color: #ddddff;
             --nav-bg: rgba(255, 255, 255, 0.8);
+            --modal-overlay: rgba(0, 0, 0, 0.6);
         }
 
         body {
@@ -40,12 +42,9 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* الهيدر والـ Navbar */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             background: var(--nav-bg);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
@@ -56,16 +55,8 @@
             z-index: 1000;
         }
 
-        .logo {
-            font-weight: bold;
-            font-size: 1.3rem;
-            color: var(--accent-color);
-        }
-
-        .nav-controls {
-            display: flex;
-            gap: 10px;
-        }
+        .logo { font-weight: bold; font-size: 1.3rem; color: var(--accent-color); }
+        .nav-controls { display: flex; gap: 10px; }
 
         .btn-control {
             background: var(--bg-color);
@@ -74,14 +65,11 @@
             padding: 6px 12px;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: 6px;
+            font-weight: bold;
             font-size: 0.9rem;
             transition: 0.2s;
         }
-
-        .btn-control:hover {
-            border-color: var(--accent-color);
-        }
+        .btn-control:hover { border-color: var(--accent-color); }
 
         header {
             background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
@@ -89,31 +77,11 @@
             text-align: center;
             border-bottom: 2px solid var(--accent-color);
         }
+        header h1 { font-size: 2.8rem; margin: 0; }
+        header p { color: var(--muted-text); font-size: 1.2rem; margin-top: 10px; }
 
-        header h1 {
-            font-size: 2.8rem;
-            margin: 0;
-        }
-
-        header p {
-            color: var(--muted-text);
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .grid {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
-        }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: flex; flex-direction: row; flex-wrap: wrap; gap: 25px; justify-content: center; }
 
         .card {
             background: var(--card-bg);
@@ -127,25 +95,9 @@
             flex-direction: column;
             justify-content: space-between;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            font-size: 1.6rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-        }
-
-        .card p {
-            color: var(--muted-text);
-            font-size: 1rem;
-            line-height: 1.6;
-            min-height: 80px;
-        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+        .card h2 { margin-top: 0; font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        .card p { color: var(--muted-text); font-size: 1rem; line-height: 1.6; min-height: 80px; }
 
         .badge {
             display: inline-block;
@@ -159,34 +111,97 @@
             border: 1px solid var(--accent-color);
         }
 
+        .btn-group { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        
         .btn-action {
             display: block;
             text-align: center;
             background-color: #5865F2;
             color: white;
-            padding: 12px;
+            padding: 10px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 6px;
-            margin-top: 20px;
             cursor: pointer;
             border: none;
             font-size: 1rem;
             transition: 0.3s;
         }
+        .btn-action:hover { background-color: #4752c4; }
 
-        .btn-action:hover {
-            background-color: #4752c4;
-            transform: scale(1.02);
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+        .btn-secondary:hover { border-color: var(--accent-color); background-color: rgba(0, 255, 0, 0.05); }
+
+        /* ستايل الشاشة المنبثقة (Modal) */
+        .modal {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--modal-overlay);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        html[dir="ltr"] .close-modal { left: auto; right: 15px; }
+
+        .modal-article {
+            text-align: justify;
+            line-height: 1.7;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #000;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
         }
 
         footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--muted-text);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 60px;
+            text-align: center; padding: 40px 20px; color: var(--muted-text);
+            font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 60px;
         }
     </style>
 </head>
@@ -208,33 +223,111 @@
     <div class="container">
         <div class="grid">
             
+            <!-- كارت زيكو تريجر -->
             <div class="card">
                 <div>
                     <span class="badge" id="b1">أداة أتمتة</span>
                     <h2 id="t1">Zeko Trigger ⚡</h2>
                     <p id="p1">أداة الأتمتة الذكية والاحترافية لتنفيذ المهام بسرعة فائقة وتخطي أنظمة الحماية المتطورة مع إمكانية تجربة مجانية مدتها دقيقتين.</p>
                 </div>
-                <button class="btn-action" onclick="copyDiscord()" id="btn1">📢 تواصل للشراء أو التجربة</button>
+                <div class="btn-group">
+                    <button class="btn-action btn-secondary" onclick="openModal('triggerModal')" id="det1">📖 تفاصيل وشرح البرنامج</button>
+                    <button class="btn-action" onclick="copyDiscord()" id="btn1">📢 شراء الأداة</button>
+                </div>
             </div>
 
+            <!-- كارت زيكو مونيتور -->
             <div class="card">
                 <div>
                     <span class="badge" id="b2">مراقب نظام</span>
                     <h2 id="t2">Zeko Monitor 📊</h2>
                     <p id="p2">أداتك المثالية لمراقبة أداء الجهاز في الوقت الفعلي. تابع استهلاك الـ CPU، الـ GPU، والـ RAM بدقة متناهية أثناء الجيمنج وضغط العمل.</p>
                 </div>
-                <button class="btn-action" onclick="copyDiscord()" id="btn2">📢 اطلب الأداة الآن</button>
+                <div class="btn-group">
+                    <button class="btn-action btn-secondary" onclick="openModal('monitorModal')" id="det2">📖 تفاصيل وشرح البرنامج</button>
+                    <button class="btn-action" onclick="copyDiscord()" id="btn2">📢 اطلب الأداة الآن</button>
+                </div>
             </div>
 
+            <!-- كارت كليكر برو -->
             <div class="card">
                 <div>
                     <span class="badge" id="b3">ماكرو ألعاب</span>
                     <h2 id="t3">Clicker Pro 🔥</h2>
                     <p id="p3">مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.</p>
                 </div>
-                <button class="btn-action" onclick="copyDiscord()" id="btn3">📢 شراء كود التفعيل</button>
+                <div class="btn-group">
+                    <button class="btn-action btn-secondary" onclick="openModal('clickerModal')" id="det3">📖 تفاصيل وشرح البرنامج</button>
+                    <button class="btn-action" onclick="copyDiscord()" id="btn3">📢 شراء كود التفعيل</button>
+                </div>
             </div>
 
+        </div>
+    </div>
+
+    <!-- ================= الشاشات المنبثقة للمقالات والفيديوهات ================= -->
+    
+    <!-- ميردال زيكو تريجر -->
+    <div id="triggerModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('triggerModal')">&times;</button>
+            <h2 id="mt1">شرح ومميزات Zeko Trigger ⚡</h2>
+            <div class="modal-article" id="ma1">
+                <p>يعتبر برنامج Zeko Trigger النقلة النوعية في عالم أتمتة المهام البرمجية والتفاعل مع أنظمة الألعاب الاحترافية. تم تصميم هذا البرنامج بعناية فائقة ليوفر سرعة استجابة مذهلة في تنفيذ الأوامر مع دمج خوارزميات متطورة لتخطي الفحص الذكي.</p>
+                <h3>أبرز المميزات:</h3>
+                <ul>
+                    <li>تنفيذ الحلقات التكرارية والـ Loops بثبات تام وبدون أي تهنيج في الواجهة.</li>
+                    <li>إمكانية تجربة النسخة بالكامل لمدة دقيقتين مجاناً للتأكد من الكفاءة قبل الشراء.</li>
+                    <li>تخصيص كامل للأزرار واختصارات لوحة المفاتيح بما يناسب طبيعة عملك.</li>
+                </ul>
+            </div>
+            <div class="video-container">
+                <!-- شيل الـ ID (dQw4w9WgXcQ) وحط مكانه معرف فيديو اليوتيوب بتاعك بعدين -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <button class="btn-action" onclick="copyDiscord()" style="width:100%">📢 نسخ الديسكورد للتواصل والشراء</button>
+        </div>
+    </div>
+
+    <!-- ميردال زيكو مونيتور -->
+    <div id="monitorModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('monitorModal')">&times;</button>
+            <h2 id="mt2">شرح ومميزات Zeko Monitor 📊</h2>
+            <div class="modal-article" id="ma2">
+                <p>برنامج Zeko Monitor هو أداة خفيفة ومتقدمة تمنحك السيطرة الكاملة لمراقبة موارد جهازك في الوقت الفعلي. الأداة مصممة خصيصاً للمبرمجين والجيجرز الذين يحتاجون لمتابعة دقيقة للأداء دون استهلاك أي موارد من المعالج.</p>
+                <h3>أبرز المميزات:</h3>
+                <ul>
+                    <li>عرض فوري لنسب استهلاك المعالج (CPU)، كارت الشاشة (GPU)، والذاكرة العشوائية (RAM).</li>
+                    <li>واجهة مرنة مدمجة تظهر فوق الألعاب والتطبيقات الثقيلة بسلاسة تامة.</li>
+                    <li>تحسين قراءة البيانات مباشرة من مستشعرات اللوحة الأم لضمان دقة الأرقام.</li>
+                </ul>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <button class="btn-action" onclick="copyDiscord()" style="width:100%">📢 طلب الأداة الآن عبر ديسكورد</button>
+        </div>
+    </div>
+
+    <!-- ميردال كليكر برو -->
+    <div id="clickerModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('clickerModal')">&times;</button>
+            <h2 id="mt3">شرح ومميزات Clicker Pro 🔥</h2>
+            <div class="modal-article" id="ma3">
+                <p>إذا كنت تبحث عن مساعد الفارم الأقوى والأكثر أماناً، فإن Clicker Pro هو اختيارك الأول. تم بناء الماكرو بالاعتماد على محاكاة بشرية ذكية تجعل من المستحيل على أنظمة الأنتي شيت كشف النمط التكراري.</p>
+                <h3>أبرز المميزات:</h3>
+                <ul>
+                    <li>توليد نقرات (Right Clicks) بفواصل زمنية عشوائية تماماً ومحاكية لليد البشرية.</li>
+                    <li>ميزة الحفاظ على ثبات زري الـ Ctrl والـ Shift للتحكم والحركة السريعة دون انقطاع.</li>
+                    <li>تقنية الـ Process Masquerading للتنكر الكامل داخل مدير المهام (Task Manager).</li>
+                </ul>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <button class="btn-action" onclick="copyDiscord()" style="width:100%">📢 شراء كود تفعيل النسخة المدفوعة</button>
         </div>
     </div>
 
@@ -243,28 +336,23 @@
     </footer>
 
     <script>
-        // قاموس اللغات الاحترافي لتغيير المحتوى والـ SEO سريعا
         const translations = {
             ar: {
-                dir: "rtl",
-                lang: "ar",
-                langBtn: "English",
+                dir: "rtl", lang: "ar", langBtn: "English",
                 mainTitle: "Zeko Software Studio 🚀",
                 mainDesc: "الأدوات الاحترافية المتقدمة للأتمتة، الحماية، ومراقبة موارد النظام",
-                b1: "أداة أتمتة", t1: "Zeko Trigger ⚡", p1: "أداة الأتمتة الذكية والاحترافية لتنفيذ المهام بسرعة فائقة وتخطي أنظمة الحماية المتطورة مع إمكانية تجربة مجانية مدتها دقيقتين.", btn1: "📢 تواصل للشراء أو التجربة",
-                b2: "مراقب نظام", t2: "Zeko Monitor 📊", p2: "أداتك المثالية لمراقبة أداء الجهاز في الوقت الفعلي. تابع استهلاك الـ CPU، الـ GPU، والـ RAM بدقة متناهية أثناء الجيمنج وضغط العمل.", btn2: "📢 اطلب الأداة الآن",
-                b3: "ماكرو ألعاب", t3: "Clicker Pro 🔥", p3: "مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.", btn3: "📢 شراء كود التفعيل",
+                b1: "أداة أتمتة", t1: "Zeko Trigger ⚡", p1: "أداة الأتمتة الذكية والاحترافية لتنفيذ المهام بسرعة فائقة وتخطي أنظمة الحماية المتطورة مع إمكانية تجربة مجانية مدتها دقيقتين.", btn1: "📢 شراء الأداة", det1: "📖 تفاصيل وشرح البرنامج",
+                b2: "مراقب نظام", t2: "Zeko Monitor 📊", p2: "أداتك المثالية لمراقبة أداء الجهاز في الوقت الفعلي. تابع استهلاك الـ CPU، الـ GPU، والـ RAM بدقة متناهية أثناء الجيمنج وضغط العمل.", btn2: "📢 اطلب الأداة الآن", det2: "📖 تفاصيل وشرح البرنامج",
+                b3: "ماكرو ألعاب", t3: "Clicker Pro 🔥", p3: "مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.", btn3: "📢 شراء كود التفعيل", det3: "📖 تفاصيل وشرح البرنامج",
                 footer: "جميع الحقوق محفوظة © Zeko Software Studio 2026"
             },
             en: {
-                dir: "ltr",
-                lang: "en",
-                langBtn: "العربية",
+                dir: "ltr", lang: "en", langBtn: "العربية",
                 mainTitle: "Zeko Software Studio 🚀",
                 mainDesc: "Advanced Professional Tools for Automation, Protection & System Monitoring",
-                b1: "Automation Tool", t1: "Zeko Trigger ⚡", p1: "Smart & professional automation tool designed for ultra-fast task execution, bypassing modern anti-cheats with a 2-minute trial.", btn1: "📢 Contact for Buy or Trial",
-                b2: "System Monitor", t2: "Zeko Monitor 📊", p2: "Your ultimate real-time performance monitor. Track CPU, GPU, and RAM usage with high precision during intense gaming sessions.", btn2: "📢 Order Tool Now",
-                b3: "Gaming Macro", t3: "Clicker Pro 🔥", p3: "The most powerful farming assistant for tough gaming maps. Features smart mouse click simulation with humanized random delay and Ctrl-hold feature.", btn3: "📢 Purchase License Key",
+                b1: "Automation Tool", t1: "Zeko Trigger ⚡", p1: "Smart & professional automation tool designed for ultra-fast task execution, bypassing modern anti-cheats with a 2-minute trial.", btn1: "📢 Buy Tool Now", det1: "📖 View Details & Video",
+                b2: "System Monitor", t2: "Zeko Monitor 📊", p2: "Your ultimate real-time performance monitor. Track CPU, GPU, and RAM usage with high precision during intense gaming sessions.", btn2: "📢 Order Tool Now", det2: "📖 View Details & Video",
+                b3: "Gaming Macro", t3: "Clicker Pro 🔥", p3: "The most powerful farming assistant for tough gaming maps. Features smart mouse click simulation with humanized random delay and Ctrl-hold feature.", btn3: "📢 Purchase License Key", det3: "📖 View Details & Video",
                 footer: "All Rights Reserved © Zeko Software Studio 2026"
             }
         };
@@ -282,20 +370,9 @@
             document.getElementById('mainTitle').innerText = data.mainTitle;
             document.getElementById('mainDesc').innerText = data.mainDesc;
             
-            document.getElementById('b1').innerText = data.b1;
-            document.getElementById('t1').innerText = data.t1;
-            document.getElementById('p1').innerText = data.p1;
-            document.getElementById('btn1').innerText = data.btn1;
-
-            document.getElementById('b2').innerText = data.b2;
-            document.getElementById('t2').innerText = data.t2;
-            document.getElementById('p2').innerText = data.p2;
-            document.getElementById('btn2').innerText = data.btn2;
-
-            document.getElementById('b3').innerText = data.b3;
-            document.getElementById('t3').innerText = data.t3;
-            document.getElementById('p3').innerText = data.p3;
-            document.getElementById('btn3').innerText = data.btn3;
+            document.getElementById('b1').innerText = data.b1; document.getElementById('t1').innerText = data.t1; document.getElementById('p1').innerText = data.p1; document.getElementById('btn1').innerText = data.btn1; document.getElementById('det1').innerText = data.det1;
+            document.getElementById('b2').innerText = data.b2; document.getElementById('t2').innerText = data.t2; document.getElementById('p2').innerText = data.p2; document.getElementById('btn2').innerText = data.btn2; document.getElementById('det2').innerText = data.det2;
+            document.getElementById('b3').innerText = data.b3; document.getElementById('t3').innerText = data.t3; document.getElementById('p3').innerText = data.p3; document.getElementById('btn3').innerText = data.btn3; document.getElementById('det3').innerText = data.det3;
             
             document.getElementById('footerText').innerText = data.footer;
         }
@@ -310,6 +387,9 @@
                 document.getElementById('themeBtn').innerText = "🌙 Dark";
             }
         }
+
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
         function copyDiscord() {
             navigator.clipboard.writeText('zekacoolvip');
