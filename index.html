@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Zeko Software Studio | Professional Automation & Gaming Tools</title>
-    <meta name="description" content="Zeko Software Studio - المطور الأول لأدوات الأتمتة الاحترافية، ومراقبة الأنظمة، والماكرو الذكي للألعاب مثل Clicker Pro و Zeko Trigger و Zeko Monitor.">
-    <meta name="keywords" content="Zeko Trigger, Zeko Monitor, Clicker Pro, gaming macro, automation tools, CPU monitor, Discord zekacoolvip, برامج أتمتة, ماكرو ألعاب, كونكر بوت">
+    <title>Zeko Software Studio | Premium Automation, Android & Gaming Solutions</title>
+    <meta name="description" content="Zeko Software Studio - Top-tier developer for gaming macros, Android applications, and custom automation tools. Home of Clicker Pro.">
+    <meta name="keywords" content="Clicker Pro, gaming macro, Android app development, custom software development, hire programmer, automation scripts, Discord zekacoolvip, برامج أتمتة, ماكرو ألعاب, تطبيقات أندرويد">
     <meta name="author" content="Zeko">
     
     <style>
@@ -55,7 +55,7 @@
             z-index: 1000;
         }
 
-        .logo { font-weight: bold; font-size: 1.3rem; color: var(--accent-color); }
+        .logo { font-weight: bold; font-size: 1.3rem; color: var(--accent-color); letter-spacing: 1px; }
         .nav-controls { display: flex; gap: 10px; }
 
         .btn-control {
@@ -73,31 +73,51 @@
 
         header {
             background: linear-gradient(135deg, var(--card-bg), var(--bg-color));
-            padding: 120px 20px 60px 20px;
+            padding: 140px 20px 70px 20px;
             text-align: center;
             border-bottom: 2px solid var(--accent-color);
         }
-        header h1 { font-size: 2.8rem; margin: 0; }
-        header p { color: var(--muted-text); font-size: 1.2rem; margin-top: 10px; }
 
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        .grid { display: flex; flex-direction: row; flex-wrap: wrap; gap: 25px; justify-content: center; }
+        /* أنيميشن النص المتحرك بالألوان النيون ودمج خلفية الصورة x.png */
+        header h1 { 
+            font-size: 3.5rem; 
+            margin: 0; 
+            font-weight: 800;
+            background-image: url('x.png');
+            background-size: cover;
+            background-position: center;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: glowText 4s infinite alternate;
+        }
+
+        @keyframes glowText {
+            0% { filter: drop-shadow(0 0 6px rgba(0,255,0,0.7)); }
+            50% { filter: drop-shadow(0 0 18px rgba(0,255,255,0.9)); }
+            100% { filter: drop-shadow(0 0 6px rgba(88,101,242,0.7)); }
+        }
+
+        header p { color: var(--muted-text); font-size: 1.2rem; margin-top: 15px; font-weight: 500; }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: flex; flex-direction: row; flex-wrap: wrap; gap: 30px; justify-content: center; }
 
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 25px;
+            padding: 30px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: 0.3s;
-            width: 290px;
+            width: 320px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
-        .card h2 { margin-top: 0; font-size: 1.6rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
-        .card p { color: var(--muted-text); font-size: 1rem; line-height: 1.6; min-height: 80px; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-color); box-shadow: 0 8px 25px rgba(0,255,0,0.1); }
+        .card h2 { margin-top: 0; font-size: 1.7rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+        .card p { color: var(--muted-text); font-size: 1rem; line-height: 1.6; min-height: 90px; }
 
         .badge {
             display: inline-block;
@@ -111,14 +131,16 @@
             border: 1px solid var(--accent-color);
         }
 
-        .btn-group { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        .btn-group { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
         
         .btn-action {
-            display: block;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             background-color: #5865F2;
             color: white;
-            padding: 10px;
+            padding: 12px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 6px;
@@ -127,7 +149,7 @@
             font-size: 1rem;
             transition: 0.3s;
         }
-        .btn-action:hover { background-color: #4752c4; }
+        .btn-action:hover { background-color: #4752c4; transform: scale(1.02); }
 
         .btn-secondary {
             background-color: transparent;
@@ -136,7 +158,7 @@
         }
         .btn-secondary:hover { border-color: var(--accent-color); background-color: rgba(0, 255, 0, 0.05); }
 
-        /* ستايل الشاشة المنبثقة (Modal) */
+        /* Modals */
         .modal {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -162,205 +184,204 @@
             overflow-y: auto;
             padding: 30px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         
         .close-modal {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 1.5rem;
-            cursor: pointer;
+            top: 15px; right: 15px;
+            background: none; border: none;
+            color: var(--text-color); font-size: 1.8rem; cursor: pointer;
         }
-        html[dir="ltr"] .close-modal { left: auto; right: 15px; }
+        html[dir="rtl"] .close-modal { right: auto; left: 15px; }
 
-        .modal-article {
-            text-align: justify;
-            line-height: 1.7;
-            color: var(--text-color);
-            margin-bottom: 20px;
-        }
+        .modal-article { text-align: justify; line-height: 1.7; color: var(--text-color); margin-bottom: 20px; }
+        .modal-article h3 { color: var(--accent-color); margin-top: 20px; }
+        .modal-article ul { padding-left: 20px; padding-right: 0; }
+        html[dir="rtl"] .modal-article ul { padding-right: 20px; padding-left: 0; }
 
         .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            background: #000;
-            margin: 20px 0;
-            border: 1px solid var(--border-color);
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+            border-radius: 10px; background: #000; margin: 20px 0; border: 1px solid var(--border-color);
         }
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         footer {
             text-align: center; padding: 40px 20px; color: var(--muted-text);
             font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 60px;
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P5VK0GGKC6');
+    </script>
 </head>
 <body>
 
     <nav>
         <div class="logo">ZEKO STUDIO</div>
         <div class="nav-controls">
-            <button class="btn-control" id="langBtn" onclick="toggleLanguage()">English</button>
+            <button class="btn-control" id="langBtn" onclick="toggleLanguage()">العربية</button>
             <button class="btn-control" id="themeBtn" onclick="toggleTheme()">☀️ Light</button>
         </div>
     </nav>
 
     <header>
-        <h1 id="mainTitle">Zeko Software Studio 🚀</h1>
-        <p id="mainDesc">الأدوات الاحترافية المتقدمة للأتمتة، الحماية، ومراقبة موارد النظام</p>
+        <h1 id="mainTitle">Zeko Software Studio</h1>
+        <p id="mainDesc">Advanced Gaming Macros, Android Apps & High-Performance Custom Software Development</p>
     </header>
 
     <div class="container">
         <div class="grid">
             
-            <!-- كارت زيكو تريجر -->
+            <!-- Clicker Pro -->
             <div class="card">
                 <div>
-                    <span class="badge" id="b1">أداة أتمتة</span>
-                    <h2 id="t1">Zeko Trigger ⚡</h2>
-                    <p id="p1">أداة الأتمتة الذكية والاحترافية لتنفيذ المهام بسرعة فائقة وتخطي أنظمة الحماية المتطورة مع إمكانية تجربة مجانية مدتها دقيقتين.</p>
+                    <span class="badge" id="b1">Gaming Macro</span>
+                    <h2 id="t1">Clicker Pro 🔥</h2>
+                    <p id="p1">The ultimate farming assistant for intense maps. Simulate humanized clicks with random smart delays, Ctrl-hold feature, and maximum safety.</p>
                 </div>
                 <div class="btn-group">
-                    <button class="btn-action btn-secondary" onclick="openModal('triggerModal')" id="det1">📖 تفاصيل وشرح البرنامج</button>
-                    <button class="btn-action" onclick="copyDiscord()" id="btn1">📢 شراء الأداة</button>
+                    <button class="btn-action btn-secondary" onclick="openModal('clickerModal')" id="det1">📖 View Details & Video</button>
+                    <button class="btn-action" onclick="connectDiscord()" id="btn1">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.575-.407.833a12.211 12.211 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032a.054.054 0 0 0 .022.039c2.1 1.53 4.1 2.472 6.07 3.08a.058.058 0 0 0 .062-.02c.462-.63.874-1.295 1.21-2a.058.058 0 0 0-.03-.077c-.66-.251-1.285-.56-1.872-.911a.058.058 0 0 1-.006-.094c.124-.092.247-.189.367-.289a.058.058 0 0 1 .061-.008c3.817 1.745 7.966 1.745 11.737 0a.058.058 0 0 1 .062.007c.12.1.242.197.367.29a.058.058 0 0 1-.006.094c-.588.35-1.21.66-1.87.91a.058.058 0 0 0-.03.078c.345.703.758 1.362 1.21 1.996a.058.058 0 0 0 .062.02c1.983-.608 3.984-1.55 6.085-3.08a.054.054 0 0 0 .022-.038c.344-3.41-.533-6.42-2.52-9.106a.044.044 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/></svg>
+                        <span id="at1">Add on Discord</span>
+                    </button>
                 </div>
             </div>
 
-            <!-- كارت زيكو مونيتور -->
+            <!-- Custom Software Design -->
             <div class="card">
                 <div>
-                    <span class="badge" id="b2">مراقب نظام</span>
-                    <h2 id="t2">Zeko Monitor 📊</h2>
-                    <p id="p2">أداتك المثالية لمراقبة أداء الجهاز في الوقت الفعلي. تابع استهلاك الـ CPU، الـ GPU، والـ RAM بدقة متناهية أثناء الجيمنج وضغط العمل.</p>
+                    <span class="badge" id="b2">Premium Service</span>
+                    <h2 id="t2">Custom Software 🚀</h2>
+                    <p id="p2">Need a custom bot, automation tool, or android application built from scratch? Get high-quality code customized exactly to your needs.</p>
                 </div>
                 <div class="btn-group">
-                    <button class="btn-action btn-secondary" onclick="openModal('monitorModal')" id="det2">📖 تفاصيل وشرح البرنامج</button>
-                    <button class="btn-action" onclick="copyDiscord()" id="btn2">📢 اطلب الأداة الآن</button>
-                </div>
-            </div>
-
-            <!-- كارت كليكر برو -->
-            <div class="card">
-                <div>
-                    <span class="badge" id="b3">ماكرو ألعاب</span>
-                    <h2 id="t3">Clicker Pro 🔥</h2>
-                    <p id="p3">مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.</p>
-                </div>
-                <div class="btn-group">
-                    <button class="btn-action btn-secondary" onclick="openModal('clickerModal')" id="det3">📖 تفاصيل وشرح البرنامج</button>
-                    <button class="btn-action" onclick="copyDiscord()" id="btn3">📢 شراء كود التفعيل</button>
+                    <button class="btn-action btn-secondary" onclick="openModal('customModal')" id="det2">📖 Pricing & Details</button>
+                    <button class="btn-action" onclick="connectDiscord()" id="btn2">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.575-.407.833a12.211 12.211 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032a.054.054 0 0 0 .022.039c2.1 1.53 4.1 2.472 6.07 3.08a.058.058 0 0 0 .062-.02c.462-.63.874-1.295 1.21-2a.058.058 0 0 0-.03-.077c-.66-.251-1.285-.56-1.872-.911a.058.058 0 0 1-.006-.094c.124-.092.247-.189.367-.289a.058.058 0 0 1 .061-.008c3.817 1.745 7.966 1.745 11.737 0a.058.058 0 0 1 .062.007c.12.1.242.197.367.29a.058.058 0 0 1-.006.094c-.588.35-1.21.66-1.87.91a.058.058 0 0 0-.03.078c.345.703.758 1.362 1.21 1.996a.058.058 0 0 0 .062.02c1.983-.608 3.984-1.55 6.085-3.08a.054.054 0 0 0 .022-.038c.344-3.41-.533-6.42-2.52-9.106a.044.044 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/></svg>
+                        <span id="at2">Order Project</span>
+                    </button>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- ================= الشاشات المنبثقة للمقالات والفيديوهات ================= -->
+    <!-- ================= MODALS (Popups) ================= -->
     
-    <!-- ميردال زيكو تريجر -->
-    <div id="triggerModal" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('triggerModal')">&times;</button>
-            <h2 id="mt1">شرح ومميزات Zeko Trigger ⚡</h2>
-            <div class="modal-article" id="ma1">
-                <p>يعتبر برنامج Zeko Trigger النقلة النوعية في عالم أتمتة المهام البرمجية والتفاعل مع أنظمة الألعاب الاحترافية. تم تصميم هذا البرنامج بعناية فائقة ليوفر سرعة استجابة مذهلة في تنفيذ الأوامر مع دمج خوارزميات متطورة لتخطي الفحص الذكي.</p>
-                <h3>أبرز المميزات:</h3>
-                <ul>
-                    <li>تنفيذ الحلقات التكرارية والـ Loops بثبات تام وبدون أي تهنيج في الواجهة.</li>
-                    <li>إمكانية تجربة النسخة بالكامل لمدة دقيقتين مجاناً للتأكد من الكفاءة قبل الشراء.</li>
-                    <li>تخصيص كامل للأزرار واختصارات لوحة المفاتيح بما يناسب طبيعة عملك.</li>
-                </ul>
-            </div>
-            <div class="video-container">
-                <!-- شيل الـ ID (dQw4w9WgXcQ) وحط مكانه معرف فيديو اليوتيوب بتاعك بعدين -->
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <button class="btn-action" onclick="copyDiscord()" style="width:100%">📢 نسخ الديسكورد للتواصل والشراء</button>
-        </div>
-    </div>
-
-    <!-- ميردال زيكو مونيتور -->
-    <div id="monitorModal" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('monitorModal')">&times;</button>
-            <h2 id="mt2">شرح ومميزات Zeko Monitor 📊</h2>
-            <div class="modal-article" id="ma2">
-                <p>برنامج Zeko Monitor هو أداة خفيفة ومتقدمة تمنحك السيطرة الكاملة لمراقبة موارد جهازك في الوقت الفعلي. الأداة مصممة خصيصاً للمبرمجين والجيجرز الذين يحتاجون لمتابعة دقيقة للأداء دون استهلاك أي موارد من المعالج.</p>
-                <h3>أبرز المميزات:</h3>
-                <ul>
-                    <li>عرض فوري لنسب استهلاك المعالج (CPU)، كارت الشاشة (GPU)، والذاكرة العشوائية (RAM).</li>
-                    <li>واجهة مرنة مدمجة تظهر فوق الألعاب والتطبيقات الثقيلة بسلاسة تامة.</li>
-                    <li>تحسين قراءة البيانات مباشرة من مستشعرات اللوحة الأم لضمان دقة الأرقام.</li>
-                </ul>
-            </div>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <button class="btn-action" onclick="copyDiscord()" style="width:100%">📢 طلب الأداة الآن عبر ديسكورد</button>
-        </div>
-    </div>
-
-    <!-- ميردال كليكر برو -->
+    <!-- Clicker Pro Modal -->
     <div id="clickerModal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('clickerModal')">&times;</button>
-            <h2 id="mt3">شرح ومميزات Clicker Pro 🔥</h2>
-            <div class="modal-article" id="ma3">
-                <p>إذا كنت تبحث عن مساعد الفارم الأقوى والأكثر أماناً، فإن Clicker Pro هو اختيارك الأول. تم بناء الماكرو بالاعتماد على محاكاة بشرية ذكية تجعل من المستحيل على أنظمة الأنتي شيت كشف النمط التكراري.</p>
-                <h3>أبرز المميزات:</h3>
+            <h2 id="mt1">Clicker Pro - In-Depth Review 🔥</h2>
+            <div class="modal-article" id="ma1">
+                <p>Welcome to the official presentation of Clicker Pro. If you are looking for the most stable, reliable, and undetected farming assistant, this is your ultimate choice. Built specifically to handle intensive map grinding effortlessly.</p>
+                <h3>Core Technical Features:</h3>
                 <ul>
-                    <li>توليد نقرات (Right Clicks) بفواصل زمنية عشوائية تماماً ومحاكية لليد البشرية.</li>
-                    <li>ميزة الحفاظ على ثبات زري الـ Ctrl والـ Shift للتحكم والحركة السريعة دون انقطاع.</li>
-                    <li>تقنية الـ Process Masquerading للتنكر الكامل داخل مدير المهام (Task Manager).</li>
+                    <li><strong>Humanized Clicks:</strong> Generates right clicks with micro-random delays to replicate true human hand behavior perfectly.</li>
+                    <li><strong>Action Modifier Holds:</strong> Safely locks Ctrl and Shift keys for continuous high-speed combat and movement.</li>
+                    <li><strong>Process Cloaking:</strong> Advanced internal security to remain lightweight and fully hidden inside the system.</li>
                 </ul>
             </div>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/RDww4GAcwhg" frameborder="0" allowfullscreen></iframe>
             </div>
-            <button class="btn-action" onclick="copyDiscord()" style="width:100%">📢 شراء كود تفعيل النسخة المدفوعة</button>
+            <button class="btn-action" onclick="connectDiscord()" style="width:100%">📢 Add Me on Discord to Activate</button>
+        </div>
+    </div>
+
+    <!-- Custom Software Modal -->
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('customModal')">&times;</button>
+            <h2 id="mt2">Custom Software Development 🚀</h2>
+            <div class="modal-article" id="ma2">
+                <p>Have an exclusive project idea? I specialize in developing custom automated scripts, windows forms, GUI tools, android applications, and system utility apps tailored 100% to your specifications.</p>
+                <h3>Pricing Structure:</h3>
+                <ul>
+                    <li><strong>Simple Scripts & Macros:</strong> Starting from <strong>$5 to $25</strong> (Quick turnaround).</li>
+                    <li><strong>Mid-Tier GUI & Android Apps:</strong> Ranging from <strong>$30 to $150</strong> (Includes custom UI, stability configurations).</li>
+                    <li><strong>Advanced Enterprise/Complex Tools:</strong> Up to <strong>$500</strong> (Deep optimization, complete custom logic).</li>
+                </ul>
+                <p style="margin-top:15px; font-weight:bold; color:var(--accent-color);">Price is heavily dynamic and depends completely on your project requirements!</p>
+            </div>
+            <button class="btn-action" onclick="connectDiscord()" style="width:100%">📢 Add Me on Discord to Pitch Your Idea</button>
         </div>
     </div>
 
     <footer id="footerText">
-        جميع الحقوق محفوظة © Zeko Software Studio 2026
+        All Rights Reserved © Zeko Software Studio 2026
     </footer>
 
     <script>
         const translations = {
-            ar: {
-                dir: "rtl", lang: "ar", langBtn: "English",
-                mainTitle: "Zeko Software Studio 🚀",
-                mainDesc: "الأدوات الاحترافية المتقدمة للأتمتة، الحماية، ومراقبة موارد النظام",
-                b1: "أداة أتمتة", t1: "Zeko Trigger ⚡", p1: "أداة الأتمتة الذكية والاحترافية لتنفيذ المهام بسرعة فائقة وتخطي أنظمة الحماية المتطورة مع إمكانية تجربة مجانية مدتها دقيقتين.", btn1: "📢 شراء الأداة", det1: "📖 تفاصيل وشرح البرنامج",
-                b2: "مراقب نظام", t2: "Zeko Monitor 📊", p2: "أداتك المثالية لمراقبة أداء الجهاز في الوقت الفعلي. تابع استهلاك الـ CPU، الـ GPU، والـ RAM بدقة متناهية أثناء الجيمنج وضغط العمل.", btn2: "📢 اطلب الأداة الآن", det2: "📖 تفاصيل وشرح البرنامج",
-                b3: "ماكرو ألعاب", t3: "Clicker Pro 🔥", p3: "مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.", btn3: "📢 شراء كود التفعيل", det3: "📖 تفاصيل وشرح البرنامج",
-                footer: "جميع الحقوق محفوظة © Zeko Software Studio 2026"
-            },
             en: {
                 dir: "ltr", lang: "en", langBtn: "العربية",
-                mainTitle: "Zeko Software Studio 🚀",
-                mainDesc: "Advanced Professional Tools for Automation, Protection & System Monitoring",
-                b1: "Automation Tool", t1: "Zeko Trigger ⚡", p1: "Smart & professional automation tool designed for ultra-fast task execution, bypassing modern anti-cheats with a 2-minute trial.", btn1: "📢 Buy Tool Now", det1: "📖 View Details & Video",
-                b2: "System Monitor", t2: "Zeko Monitor 📊", p2: "Your ultimate real-time performance monitor. Track CPU, GPU, and RAM usage with high precision during intense gaming sessions.", btn2: "📢 Order Tool Now", det2: "📖 View Details & Video",
-                b3: "Gaming Macro", t3: "Clicker Pro 🔥", p3: "The most powerful farming assistant for tough gaming maps. Features smart mouse click simulation with humanized random delay and Ctrl-hold feature.", btn3: "📢 Purchase License Key", det3: "📖 View Details & Video",
-                footer: "All Rights Reserved © Zeko Software Studio 2026"
+                mainTitle: "Zeko Software Studio",
+                mainDesc: "Advanced Gaming Macros, Android Apps & High-Performance Custom Software Development",
+                b1: "Gaming Macro", t1: "Clicker Pro 🔥", p1: "The ultimate farming assistant for intense maps. Simulate humanized clicks with random smart delays, Ctrl-hold feature, and maximum safety.", det1: "📖 View Details & Video", at1: "Add on Discord",
+                b2: "Premium Service", t2: "Custom Software 🚀", p2: "Need a custom bot, automation tool, or android application built from scratch? Get high-quality code customized exactly to your needs.", det2: "📖 Pricing & Details", at2: "Order Project",
+                mt1: "Clicker Pro - In-Depth Review 🔥",
+                ma1: `<p>Welcome to the official presentation of Clicker Pro. If you are looking for the most stable, reliable, and undetected farming assistant, this is your ultimate choice. Built specifically to handle intensive map grinding effortlessly.</p>
+                      <h3>Core Technical Features:</h3>
+                      <ul>
+                          <li><strong>Humanized Clicks:</strong> Generates right clicks with micro-random delays to replicate true human hand behavior perfectly.</li>
+                          <li><strong>Action Modifier Holds:</strong> Safely locks Ctrl and Shift keys for continuous high-speed combat and movement.</li>
+                          <li><strong>Process Cloaking:</strong> Advanced internal security to remain lightweight and fully hidden inside the system.</li>
+                      </ul>`,
+                mt2: "Custom Software Development 🚀",
+                ma2: `<p>Have an exclusive project idea? I specialize in developing custom automated scripts, windows forms, GUI tools, android applications, and system utility apps tailored 100% to your specifications.</p>
+                      <h3>Pricing Structure:</h3>
+                      <ul>
+                          <li><strong>Simple Scripts & Macros:</strong> Starting from <strong>$5 to $25</strong> (Quick turnaround).</li>
+                          <li><strong>Mid-Tier GUI & Android Apps:</strong> Ranging from <strong>$30 to $150</strong> (Includes custom UI, stability configurations).</li>
+                          <li><strong>Advanced Enterprise/Complex Tools:</strong> Up to <strong>$500</strong> (Deep optimization, complete custom logic).</li>
+                      </ul>
+                      <p style="margin-top:15px; font-weight:bold; color:var(--accent-color);">Price is heavily dynamic and depends completely on your project requirements!</p>`,
+                fBtn1: "📢 Add Me on Discord to Activate",
+                fBtn2: "📢 Add Me on Discord to Pitch Your Idea",
+                footer: "All Rights Reserved © Zeko Software Studio 2026",
+                alertText: "Discord Username (zekacoolvip) copied! Opening Discord profile now..."
+            },
+            ar: {
+                dir: "rtl", lang: "ar", langBtn: "English",
+                mainTitle: "Zeko Software Studio",
+                mainDesc: "ماكرو ألعاب متطور، تطبيقات أندرويد، وتصميم برمجيات مخصصة فائقة الأداء حسب الطلب",
+                b1: "ماكرو ألعاب", t1: "Clicker Pro 🔥", p1: "مساعد الفارم الأقوى لخرائط الألعاب الصعبة. محاكاة كليكات ماوس ذكية بأوقات عشوائية بشرية تماماً مع ميزة ثبات الـ Ctrl والتنكر الكامل.", det1: "📖 التفاصيل وفيديو الشرح", at1: "إضافة على ديسكورد",
+                b2: "خدمة ممتازة", t2: "تصميم برامج مخصصة 🚀", p2: "محتاج بوت خاص، أداة أتمتة، أو تطبيق أندرويد مبني من الصفر؟ أحصل على كود عالي الجودة ومصمم بالكامل ليلبي احتياجاتك.", det2: "📖 الأسعار والتفاصيل", at2: "اطلب مشروعك الآن",
+                mt1: "مراجعة شاملة لبرنامج Clicker Pro 🔥",
+                ma1: `<p>أهلاً بك في العرض الرسمي لبرنامج Clicker Pro. إذا كنت تبحث عن مساعد الفارم الأقوى والأكثر أماناً وثباتاً، فهذا هو خيارك المثالي. تم تصميمه خصيصاً للتعامل مع الفارم المكثف في الخرائط الصعبة بدون مجهود.</p>
+                      <h3>أبرز المميزات التقنية:</h3>
+                      <ul>
+                          <li><strong>كليكات بشرية:</strong> يولد نقرات ماوس (Right Clicks) بفواصل زمنية عشوائية دقيقة تحاكي حركة اليد الحقيقية تماماً.</li>
+                          <li><strong>ثبات مفاتيح التحكم:</strong> يحافظ على ثبات زري Ctrl و Shift لضمان استمرارية الضرب والحركة السريعة بدون انقطاع.</li>
+                          <li><strong>التخفي الكامل:</strong> تقنيات حماية داخلية متطورة تجعل الأداة خفيفة تماماً ومتنكرة داخل النظام لتفادي أي كشف.</li>
+                      </ul>`,
+                mt2: "خدمة برمجة وتصميم البرامج وتطبيقات الأندرويد 🚀",
+                ma2: `<p>عندك فكرة مشروع حصرية وعاوز تنفذها؟ أنا متخصص في بناء وتطوير برمجيات الأتمتة المخصصة، واجهات الـ GUI، تطبيقات الأندرويد الاحترافية، وأدوات النظام المبنية بالكامل بناءً على شروطك.</p>
+                      <h3>هيكل الأسعار:</h3>
+                      <ul>
+                          <li><strong>السكربتات والماكرو البسيط:</strong> تبدأ من <strong>5$ إلى 25$</strong> (تنفيذ وتسليم سريع).</li>
+                          <li><strong>البرامج متوسطة التعقيد وتطبيقات الأندرويد:</strong> تتراوح من <strong>30$ إلى 150$</strong> (تشمل ديزاين مخصص وإعدادات ثبات عالية).</li>
+                          <li><strong>الأدوات المتقدمة والمشاريع الضخمة:</strong> تصل إلى <strong>500$</strong> (تطوير عميق، أكواد مخصصة بالكامل وتحسين شامل للأداء).</li>
+                      </ul>
+                      <p style="margin-top:15px; font-weight:bold; color:var(--accent-color);">السعر مرن جداً وبيعتمد بالكامل على حجم الشغل والميزات اللي أنت محتاجها في برنامجك!</p>`,
+                fBtn1: "📢 ضيفني على ديسكورد لتفعيل نسختك",
+                fBtn2: "📢 ضيفني على ديسكورد واشرح فكرتك",
+                footer: "جميع الحقوق محفوظة © Zeko Software Studio 2026",
+                alertText: "تم نسخ اسم المستخدم (zekacoolvip) بنجاح! جاري فتح بروفايل الديسكورد..."
             }
         };
 
-        let currentLang = 'ar';
+        let currentLang = 'en';
 
         function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
             const data = translations[currentLang];
             
             document.documentElement.lang = data.lang;
@@ -370,9 +391,14 @@
             document.getElementById('mainTitle').innerText = data.mainTitle;
             document.getElementById('mainDesc').innerText = data.mainDesc;
             
-            document.getElementById('b1').innerText = data.b1; document.getElementById('t1').innerText = data.t1; document.getElementById('p1').innerText = data.p1; document.getElementById('btn1').innerText = data.btn1; document.getElementById('det1').innerText = data.det1;
-            document.getElementById('b2').innerText = data.b2; document.getElementById('t2').innerText = data.t2; document.getElementById('p2').innerText = data.p2; document.getElementById('btn2').innerText = data.btn2; document.getElementById('det2').innerText = data.det2;
-            document.getElementById('b3').innerText = data.b3; document.getElementById('t3').innerText = data.t3; document.getElementById('p3').innerText = data.p3; document.getElementById('btn3').innerText = data.btn3; document.getElementById('det3').innerText = data.det3;
+            document.getElementById('b1').innerText = data.b1; document.getElementById('t1').innerText = data.t1; document.getElementById('p1').innerText = data.p1; document.getElementById('det1').innerText = data.det1; document.querySelector('#btn1 span').innerText = data.at1;
+            document.getElementById('b2').innerText = data.b2; document.getElementById('t2').innerText = data.t2; document.getElementById('p2').innerText = data.p2; document.getElementById('det2').innerText = data.det2; document.querySelector('#btn2 span').innerText = data.at2;
+            
+            document.getElementById('mt1').innerText = data.mt1; document.getElementById('ma1').innerHTML = data.ma1;
+            document.getElementById('mt2').innerText = data.mt2; document.getElementById('ma2').innerHTML = data.ma2;
+            
+            document.querySelectorAll('.modal .btn-action')[0].innerText = data.fBtn1;
+            document.querySelectorAll('.modal .btn-action')[1].innerText = data.fBtn2;
             
             document.getElementById('footerText').innerText = data.footer;
         }
@@ -391,9 +417,10 @@
         function openModal(id) { document.getElementById(id).classList.add('active'); }
         function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
-        function copyDiscord() {
+        function connectDiscord() {
             navigator.clipboard.writeText('zekacoolvip');
-            alert(currentLang === 'ar' ? 'تم نسخ اسم الديسكورد (zekacoolvip) بنجاح!' : 'Discord Username (zekacoolvip) copied successfully!');
+            alert(translations[currentLang].alertText);
+            window.open('https://discord.com/users/zekacoolvip', '_blank');
         }
     </script>
 </body>
