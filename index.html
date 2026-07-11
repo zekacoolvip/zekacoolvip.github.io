@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeko Software Studio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00ff00;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        nav a:hover { color: var(--accent-color); }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 50px;
+            background: linear-gradient(135deg, var(--bg-color), var(--card-bg));
+        }
+        header h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #00ff00, #58a6ff, #8957e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s infinite alternate;
+        }
+        @keyframes glow {
+            0% { filter: drop-shadow(0 0 5px rgba(0,255,0,0.3)); }
+            100% { filter: drop-shadow(0 0 20px rgba(88,166,255,0.5)); }
+        }
+        header p {
+            color: #8b949e;
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            width: 320px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        .card .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        .card .badge-purple {
+            border-color: #8957e5;
+            color: #8957e5;
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .card p {
+            color: #8b949e;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .card .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .card .btn {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-primary {
+            background: #5865F2;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #4752c4;
+            transform: scale(1.02);
+        }
+        .btn-green {
+            background: #238636;
+            color: white;
+        }
+        .btn-green:hover {
+            background: #2ea043;
+            transform: scale(1.02);
+        }
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8b949e;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ZEKO STUDIO</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Zeko Software Studio</h1>
+        <p>Advanced Gaming Macros, Security Tools & Custom Software</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+
+            <!-- Clicker Pro -->
+            <div class="card">
+                <div>
+                    <span class="badge">Gaming Macro</span>
+                    <h2>Clicker Pro 🔥</h2>
+                    <p>The ultimate farming assistant. Humanized clicks, smart delays, and full stealth.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="#clicker" class="btn btn-secondary">📖 View Details</a>
+                    <a href="https://discord.com/users/zekacoolvip" class="btn btn-primary">💬 Contact on Discord</a>
+                </div>
+            </div>
+
+            <!-- Virus Scanner Pro -->
+            <div class="card">
+                <div>
+                    <span class="badge badge-purple">Security Tool</span>
+                    <h2>Virus Scanner Pro 🛡️</h2>
+                    <p>Lightweight antivirus tool. Scan files, folders, and your entire system. Free & offline!</p>
+                </div>
+                <div class="btn-group">
+                    <a href="/blog" class="btn btn-secondary">📖 Read Article</a>
+                    <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" class="btn btn-green">⬇️ Download Now</a>
+                </div>
+            </div>
+
+            <!-- Custom Software -->
+            <div class="card">
+                <div>
+                    <span class="badge">Premium Service</span>
+                    <h2>Custom Software 🚀</h2>
+                    <p>Custom bots, automation tools, and desktop apps built to your exact specifications.</p>
+                </div>
+                <div class="btn-group">
+                    <a href="#custom" class="btn btn-secondary">📖 View Details</a>
+                    <a href="https://discord.com/users/zekacoolvip" class="btn btn-primary">💬 Order Project</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        All Rights Reserved © Zeko Software Studio 2026
+    </footer>
+
+</body>
+</html>
