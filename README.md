@@ -1,2 +1,2 @@
 # zekacoolvip.github.io
-Zeko Software Studio - Automation Tools &amp; System Monitors Official Website
+Advanced Gaming Macros, Android Apps & High-Performance Custom Software Development
