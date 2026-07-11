@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeko Software Studio - Gaming Macros, Security Tools & Custom Software</title>
-    <meta name="description" content="Zeko Software Studio - Clicker Pro gaming macro, Virus Scanner Pro antivirus, and custom software development.">
-    <meta name="keywords" content="Clicker Pro, Virus Scanner Pro, gaming macro, antivirus, custom software, automation tools">
+    
+    <!-- ===== SEO META ===== -->
+    <title>Zeko Software Studio - Free Antivirus & Gaming Tools</title>
+    <meta name="description" content="Virus Scanner Pro - Free lightweight antivirus. Scan files, folders, and Windows system. 100% free and works offline!">
+    <meta name="keywords" content="Virus Scanner Pro, antivirus, free antivirus, gaming macro, Clicker Pro, custom software">
+    
+    <!-- ===== OPEN GRAPH (Facebook, Twitter, WhatsApp) ===== -->
+    <meta property="og:title" content="Virus Scanner Pro - Free Lightweight Antivirus">
+    <meta property="og:description" content="Download Virus Scanner Pro - Free antivirus tool. Scan files, folders, and your entire Windows system. Works offline! 100% free.">
+    <meta property="og:image" content="https://zekacoolvip.github.io/virus-scanner-banner.png">
+    <meta property="og:url" content="https://zekacoolvip.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Zeko Software Studio">
+    
+    <!-- ===== TWITTER CARDS ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Virus Scanner Pro - Free Lightweight Antivirus">
+    <meta name="twitter:description" content="Download Virus Scanner Pro - Free antivirus tool. Works offline! 100% free.">
+    <meta name="twitter:image" content="https://zekacoolvip.github.io/virus-scanner-banner.png">
+    
     <style>
-        /* ===== ROOT VARIABLES ===== */
+        /* ===== ROOT ===== */
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
@@ -17,18 +34,17 @@
             --blue-soft: #4d8aff;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: var(--bg-color);
+            background: linear-gradient(135deg, #0d1117 0%, #1a3a5c 40%, #0d2b4a 70%, #0d1117 100%);
             color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, sans-serif;
             min-height: 100vh;
-            background: linear-gradient(135deg, #0d1117 0%, #1a2332 50%, #0d1b2a 100%);
         }
 
         /* ===== NAVBAR ===== */
         nav {
-            background: rgba(13, 17, 23, 0.9);
+            background: rgba(13, 17, 23, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 15px 30px;
@@ -46,15 +62,12 @@
             font-size: 1.1rem;
             font-weight: 500;
             transition: 0.3s;
-            letter-spacing: 0.5px;
         }
-        nav a:hover {
-            color: var(--blue-light);
-        }
+        nav a:hover { color: var(--blue-light); }
 
-        /* ===== RGB ANIMATION FOR BLOG ===== */
-        .rgb-blog {
-            animation: rgbMove 2s linear infinite;
+        /* ===== RGB ANIMATION ===== */
+        .rgb {
+            animation: rgbMove 2.5s linear infinite;
             font-weight: bold;
         }
         @keyframes rgbMove {
@@ -75,14 +88,13 @@
         header h1 {
             font-size: 3.2rem;
             font-weight: 800;
-            margin-bottom: 10px;
             animation: rgbMove 3s linear infinite;
-            text-shadow: 0 0 30px rgba(88, 166, 255, 0.15);
+            text-shadow: 0 0 40px rgba(88, 166, 255, 0.2);
         }
         header p {
             color: #8b949e;
             font-size: 1.2rem;
-            margin-top: 5px;
+            margin-top: 10px;
             letter-spacing: 1px;
         }
 
@@ -109,7 +121,6 @@
             transition: 0.4s;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         .card:hover {
@@ -143,7 +154,6 @@
         .card h2 {
             font-size: 1.6rem;
             margin-bottom: 10px;
-            font-weight: 700;
         }
         .card p {
             color: #8b949e;
@@ -167,8 +177,8 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: 0.3s;
-            cursor: pointer;
             border: none;
+            cursor: pointer;
         }
         .btn-primary {
             background: #5865F2;
@@ -219,27 +229,13 @@
             color: #8b949e;
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: var(--blue-light);
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             nav { gap: 30px; padding: 12px 20px; }
-            nav a { font-size: 1rem; }
             header h1 { font-size: 2.2rem; }
             .card { width: 100%; max-width: 380px; }
-        }
-        @media (max-width: 480px) {
-            nav { gap: 20px; flex-wrap: wrap; }
-            header h1 { font-size: 1.8rem; }
-            header p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -248,7 +244,7 @@
     <!-- ===== NAVBAR ===== -->
     <nav>
         <a href="/">🏠 Home</a>
-        <a href="/blog" class="rgb-blog">📝 Blog</a>
+        <a href="/blog" class="rgb">📝 Blog</a>
     </nav>
 
     <!-- ===== HEADER ===== -->
@@ -279,10 +275,12 @@
                 <div>
                     <span class="badge badge-purple">🛡️ Security Tool</span>
                     <h2>Virus Scanner Pro</h2>
-                    <p>Lightweight antivirus tool. Scan files, folders, and your entire system. Free &amp; offline!</p>
+                    <p>🔹 <strong>Lightweight</strong> - Uses only 50MB RAM</p>
+                    <p>🔹 <strong>Works Offline</strong> - No internet required</p>
+                    <p>🔹 <strong>VirusTotal</strong> - 70+ antivirus engines</p>
+                    <p>🔹 <strong>100% FREE</strong> - No hidden costs</p>
                 </div>
                 <div class="btn-group">
-                    <a href="/blog" class="btn btn-secondary">📖 Read Article</a>
                     <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" target="_blank" class="btn btn-green">⬇️ Download Now</a>
                 </div>
             </div>
@@ -305,7 +303,7 @@
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        All Rights Reserved &copy; <a href="/">Zeko Software Studio</a> 2026
+        All Rights Reserved &copy; <a href="/" style="color:#58a6ff; text-decoration:none;">Zeko Software Studio</a> 2026
     </footer>
 
 </body>
