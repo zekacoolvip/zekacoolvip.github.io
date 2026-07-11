@@ -3,24 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Resources - Zeko Software Studio</title>
-    <meta name="description" content="Read articles about security, automation, software development, and free tools.">
-    
-    <!-- ===== OPEN GRAPH ===== -->
-    <meta property="og:title" content="Tech Blog - Zeko Software Studio">
-    <meta property="og:description" content="Articles about security, automation, and software development.">
-    <meta property="og:image" content="https://zekacoolvip.github.io/blog-banner.png">
-    <meta property="og:url" content="https://zekacoolvip.github.io/blog/">
-    <meta property="og:type" content="website">
-    
-    <!-- ===== TWITTER ===== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tech Blog - Zeko Software Studio">
-    <meta name="twitter:description" content="Articles about security, automation, and software development.">
-    <meta name="twitter:image" content="https://zekacoolvip.github.io/blog-banner.png">
-    
+    <title>Tech Blog - Zeko Software Studio</title>
     <style>
+        /* ===== ROOT ===== */
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
@@ -34,8 +19,10 @@
             background: linear-gradient(135deg, #0d1117 0%, #1a3a5c 40%, #0d2b4a 70%, #0d1117 100%);
             color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, sans-serif;
+            min-height: 100vh;
         }
 
+        /* ===== NAVBAR ===== */
         nav {
             background: rgba(13, 17, 23, 0.85);
             backdrop-filter: blur(12px);
@@ -58,6 +45,7 @@
         }
         nav a:hover { color: var(--blue-light); }
 
+        /* ===== RGB ANIMATION ===== */
         .rgb {
             animation: rgbMove 2.5s linear infinite;
             font-weight: bold;
@@ -72,6 +60,7 @@
             100% { color: #ff0000; }
         }
 
+        /* ===== HEADER ===== */
         header {
             text-align: center;
             padding: 60px 20px 40px;
@@ -86,70 +75,98 @@
             margin-top: 10px;
         }
 
+        /* ===== CONTAINER ===== */
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
 
+        /* ===== POST CARDS ===== */
         .post-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 25px;
             margin-bottom: 25px;
-            transition: 0.3s;
+            transition: 0.4s;
             display: flex;
-            gap: 20px;
-            align-items: flex-start;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
         .post-card:hover {
             border-color: var(--blue-light);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 35px rgba(88, 166, 255, 0.15);
         }
 
-        .post-card .post-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 8px;
-            object-fit: cover;
-            flex-shrink: 0;
-            background: #1a2332;
-            border: 1px solid var(--border-color);
+        .post-card .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .post-card .post-content {
-            flex: 1;
-        }
-        .post-card h2 {
+        .post-card .post-header h2 {
             color: var(--blue-light);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
         }
-        .post-card .date {
+        .post-card .post-header .date {
             color: #8b949e;
             font-size: 0.85rem;
+            background: rgba(255,255,255,0.05);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
         }
-        .post-card .excerpt {
+
+        .post-card .post-excerpt {
             color: #8b949e;
-            font-size: 0.95rem;
-            margin: 8px 0;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 5px 0;
         }
-        .post-card a {
-            display: inline-block;
+
+        .post-card .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        .post-card .post-footer .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .post-card .post-footer .tags span {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--blue-light);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+        .post-card .post-footer a {
             color: #238636;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: 0.3s;
         }
-        .post-card a:hover {
+        .post-card .post-footer a:hover {
             color: #2ea043;
         }
 
+        /* ===== LOADING ===== */
         .loading {
             text-align: center;
             padding: 50px;
             color: #8b949e;
         }
 
+        /* ===== FOOTER ===== */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -158,37 +175,43 @@
             margin-top: 60px;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 600px) {
-            .post-card {
+            .post-card .post-header {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
+                align-items: flex-start;
+                gap: 8px;
             }
-            .post-card .post-image {
-                width: 100%;
-                height: 150px;
+            .post-card .post-footer {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- ===== NAVBAR ===== -->
     <nav>
         <a href="/">Home</a>
         <a href="/blog" class="rgb">Blog</a>
     </nav>
 
+    <!-- ===== HEADER ===== -->
     <header>
-        <h1>Resources</h1>
+        <h1>Tech Blog</h1>
         <p>Security, Automation &amp; Software Development</p>
     </header>
 
+    <!-- ===== POSTS ===== -->
     <div class="container">
         <div id="posts">
-            <div class="loading">📖 Loading posts...</div>
+            <div class="loading">Loading posts...</div>
         </div>
     </div>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
         All Rights Reserved &copy; <a href="/" style="color:#58a6ff; text-decoration:none;">Zeko Software Studio</a> 2026
     </footer>
@@ -219,20 +242,38 @@
 
                 posts.forEach(post => {
                     const title = post.name.replace('.md', '').replace(/-/g, ' ');
-                    const excerpt = 'Read more about ' + title + '...';
-                    
-                    const card = document.createElement('div');
-                    card.className = 'post-card';
-                    card.innerHTML = `
-                        <img src="/blog-banner.png" alt="${title}" class="post-image" onerror="this.style.display='none'">
-                        <div class="post-content">
-                            <h2>${title}</h2>
-                            <div class="date">📅 2026-07-11</div>
-                            <div class="excerpt">${excerpt}</div>
-                            <a href="post.html?file=${post.name}">📖 Read Article →</a>
-                        </div>
-                    `;
-                    container.appendChild(card);
+                    const fileName = post.name;
+
+                    // جلب محتوى المقال لاستخراج الـ tags
+                    fetch(post.download_url)
+                        .then(res => res.text())
+                        .then(content => {
+                            // استخراج الـ tags من Front Matter
+                            let tags = [];
+                            const tagMatch = content.match(/tags: \[(.*)\]/);
+                            if (tagMatch) {
+                                tags = tagMatch[1].split(',').map(t => t.trim());
+                            }
+
+                            const card = document.createElement('div');
+                            card.className = 'post-card';
+                            card.innerHTML = `
+                                <div class="post-header">
+                                    <h2>${title}</h2>
+                                    <span class="date">📅 2026-07-12</span>
+                                </div>
+                                <div class="post-excerpt">
+                                    ${title} - Read the full article to learn more about ${title}.
+                                </div>
+                                <div class="post-footer">
+                                    <div class="tags">
+                                        ${tags.map(t => `<span>#${t}</span>`).join('')}
+                                    </div>
+                                    <a href="post.html?file=${fileName}">📖 Read Article →</a>
+                                </div>
+                            `;
+                            container.appendChild(card);
+                        });
                 });
             })
             .catch(() => {
