@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Post - Zeko Software Studio</title>
+    <style>
+        /* نفس ستايل موقعك الأساسي */
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navbar */
+        nav {
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        nav .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #00FF00;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        nav a:hover { color: var(--accent-color); }
+
+        /* Post Header */
+        .post-header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .post-header h1 {
+            color: #f0883e;
+            font-size: 2.2rem;
+            margin: 0 0 10px;
+        }
+        .post-header .meta {
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+        .post-header .meta span { margin-right: 15px; }
+        .post-header .tags {
+            margin-top: 10px;
+        }
+        .post-header .tags a {
+            display: inline-block;
+            background: #21262d;
+            color: var(--accent-color);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            margin-right: 5px;
+            border: 1px solid var(--border-color);
+        }
+        .post-header .tags a:hover {
+            background: #30363d;
+        }
+
+        /* Post Content */
+        .post-content {
+            font-size: 1.05rem;
+        }
+        .post-content h1 { color: #f0883e; font-size: 1.8rem; margin-top: 30px; }
+        .post-content h2 { color: var(--accent-color); font-size: 1.5rem; margin-top: 25px; }
+        .post-content h3 { color: #238636; font-size: 1.2rem; margin-top: 20px; }
+        .post-content p { margin: 15px 0; }
+        .post-content ul, .post-content ol { padding-left: 25px; }
+        .post-content li { margin: 8px 0; }
+        .post-content a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .post-content a:hover { text-decoration: underline; }
+        .post-content code {
+            background: #161b22;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+            color: #f0883e;
+        }
+        .post-content pre {
+            background: #161b22;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+        .post-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-color);
+        }
+        .post-content blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding: 10px 20px;
+            margin: 20px 0;
+            background: #161b22;
+            border-radius: 0 6px 6px 0;
+        }
+        .post-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .post-content th, .post-content td {
+            border: 1px solid var(--border-color);
+            padding: 10px 15px;
+            text-align: left;
+        }
+        .post-content th {
+            background: #161b22;
+            color: var(--accent-color);
+        }
+        .post-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Download Button */
+        .download-box {
+            background: #161b22;
+            border: 2px solid #238636;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .download-box h3 { color: #238636; margin: 0 0 10px; }
+        .download-box .btn-download {
+            display: inline-block;
+            background: #238636;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        .download-box .btn-download:hover {
+            background: #2ea043;
+            transform: scale(1.05);
+        }
+        .download-box .info {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8b949e;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .post-header h1 { font-size: 1.6rem; }
+            .post-content { font-size: 0.95rem; }
+            nav a { margin-left: 10px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">ZEKO STUDIO</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="post-content">
+            <!-- Loading -->
+            <div style="text-align:center; padding:60px 20px;">
+                <div style="font-size:2.5rem; margin-bottom:15px;">📖</div>
+                <div style="color:#8b949e;">Loading post...</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        All Rights Reserved © Zeko Software Studio 2026
+    </footer>
+
+    <script>
+        // Get filename from URL
+        const params = new URLSearchParams(window.location.search);
+        const fileName = params.get('file');
+
+        if (!fileName) {
+            document.getElementById('post-content').innerHTML = `
+                <div style="text-align:center; padding:60px 20px;">
+                    <h2 style="color:#f85149;">❌ No post specified</h2>
+                    <p style="color:#8b949e;">Please go back to the <a href="/blog" style="color:#58a6ff;">blog page</a>.</p>
+                </div>
+            `;
+        } else {
+            const repo = 'zekacoolvip/zekacoolvip.github.io';
+            const path = `blog/posts/${fileName}`;
+
+            fetch(`https://raw.githubusercontent.com/${repo}/main/${path}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Post not found');
+                    return response.text();
+                })
+                .then(markdown => {
+                    // استخراج البيانات من الماركداون
+                    let title = fileName.replace('.md', '').replace(/-/g, ' ');
+                    let date = '';
+                    let tags = [];
+                    let content = markdown;
+
+                    // استخراج الـ Front Matter (--- ... ---)
+                    const frontMatterMatch = markdown.match(/---\n([\s\S]*?)\n---/);
+                    if (frontMatterMatch) {
+                        const frontMatter = frontMatterMatch[1];
+                        
+                        // استخراج title
+                        const titleMatch = frontMatter.match(/title: (.*)/);
+                        if (titleMatch) title = titleMatch[1];
+                        
+                        // استخراج date
+                        const dateMatch = frontMatter.match(/date: (.*)/);
+                        if (dateMatch) date = dateMatch[1];
+                        
+                        // استخراج tags
+                        const tagsMatch = frontMatter.match(/tags: \[(.*)\]/);
+                        if (tagsMatch) {
+                            tags = tagsMatch[1].split(',').map(t => t.trim());
+                        }
+                        
+                        // إزالة الـ Front Matter من المحتوى
+                        content = markdown.replace(/---\n[\s\S]*?\n---/, '').trim();
+                    }
+
+                    // تحويل الـ Markdown لـ HTML
+                    let html = content
+                        // Headers
+                        .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                        .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                        .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                        .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
+                        // Bold
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        // Italic
+                        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                        // Links
+                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+                        // Inline code
+                        .replace(/`([^`]+)`/g, '<code>$1</code>')
+                        // Code blocks
+                        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+                        // Blockquotes
+                        .replace(/^> (.*$)/gm, '<blockquote>$1</blockquote>')
+                        // Unordered lists
+                        .replace(/^- (.*$)/gm, '<li>$1</li>')
+                        // Tables (simple)
+                        .replace(/\|(.+)\|/g, function(match) {
+                            const cells = match.split('|').filter(c => c.trim());
+                            if (cells.length > 0) {
+                                const isHeader = match.includes('---');
+                                const row = cells.map(c => {
+                                    if (isHeader) return `<th>${c.trim()}</th>`;
+                                    return `<td>${c.trim()}</td>`;
+                                }).join('');
+                                return isHeader ? `<tr>${row}</tr>` : `<tr>${row}</tr>`;
+                            }
+                            return match;
+                        })
+                        // Images
+                        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">')
+                        // Paragraphs
+                        .replace(/\n\n/g, '</p><p>')
+                        .replace(/\n/g, '<br>');
+
+                    // Wrap in paragraphs
+                    html = '<p>' + html + '</p>';
+
+                    // Build the page
+                    document.getElementById('post-content').innerHTML = `
+                        <div class="post-header">
+                            <h1>${title}</h1>
+                            <div class="meta">
+                                ${date ? `<span>📅 ${date}</span>` : ''}
+                                <span>✍️ Zeko</span>
+                            </div>
+                            ${tags.length > 0 ? `
+                                <div class="tags">
+                                    ${tags.map(t => `<a href="/blog?tag=${t}">#${t}</a>`).join('')}
+                                </div>
+                            ` : ''}
+                            <div style="margin-top:15px;">
+                                <a href="/blog" style="color:#58a6ff; text-decoration:none;">⬅️ Back to Blog</a>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            ${html}
+                        </div>
+                    `;
+                })
+                .catch(error => {
+                    document.getElementById('post-content').innerHTML = `
+                        <div style="text-align:center; padding:60px 20px;">
+                            <h2 style="color:#f85149;">❌ Post not found</h2>
+                            <p style="color:#8b949e;">The post "${fileName}" doesn't exist.</p>
+                            <p><a href="/blog" style="color:#58a6ff;">⬅️ Back to Blog</a></p>
+                        </div>
+                    `;
+                });
+        }
+    </script>
+</body>
+</html>
