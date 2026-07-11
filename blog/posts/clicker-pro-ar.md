@@ -1,5 +1,5 @@
 ---
-title: "Clicker Pro - أفضل برنامج تنين للكونكر اونلاين"
+title: "Clicker Pro - أفضل برنامج للفارم للكونكر اونلاين"
 date: 2026-07-12
 author: Zeko
 tags: [Clicker Pro, كونكر اونلاين, تنين, ماكرو, CPS]
