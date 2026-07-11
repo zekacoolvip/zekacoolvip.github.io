@@ -1,52 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Zeko Software Studio</title>
+    
+    <title>Tech Blog - Zeko Software Studio</title>
+    <meta name="description" content="Read articles about security, automation, software development, and free tools.">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="Tech Blog - Zeko Software Studio">
+    <meta property="og:description" content="Articles about security, automation, and software development.">
+    <meta property="og:image" content="https://zekacoolvip.github.io/blog-banner.png">
+    <meta property="og:url" content="https://zekacoolvip.github.io/blog/">
+    <meta property="og:type" content="website">
+    
+    <!-- ===== TWITTER ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Blog - Zeko Software Studio">
+    <meta name="twitter:description" content="Articles about security, automation, and software development.">
+    <meta name="twitter:image" content="https://zekacoolvip.github.io/blog-banner.png">
+    
     <style>
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
             --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
+            --blue-light: #58a6ff;
             --border-color: #30363d;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: var(--bg-color);
+            background: linear-gradient(135deg, #0d1117 0%, #1a3a5c 40%, #0d2b4a 70%, #0d1117 100%);
             color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
         nav {
-            background: var(--bg-color);
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 15px 30px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-        nav .logo {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #00ff00;
+            gap: 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         nav a {
             color: var(--text-color);
             text-decoration: none;
-            margin-left: 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: 0.3s;
         }
-        nav a:hover { color: var(--accent-color); }
+        nav a:hover { color: var(--blue-light); }
+
+        .rgb {
+            animation: rgbMove 2.5s linear infinite;
+            font-weight: bold;
+        }
+        @keyframes rgbMove {
+            0% { color: #ff0000; }
+            17% { color: #ff8800; }
+            33% { color: #ffff00; }
+            50% { color: #00ff00; }
+            67% { color: #0088ff; }
+            83% { color: #8800ff; }
+            100% { color: #ff0000; }
+        }
 
         header {
             text-align: center;
             padding: 60px 20px 40px;
         }
         header h1 {
-            font-size: 2.5rem;
-            color: var(--accent-color);
+            font-size: 2.8rem;
+            animation: rgbMove 3s linear infinite;
         }
         header p {
             color: #8b949e;
@@ -63,25 +95,47 @@
         .post-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
             transition: 0.3s;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
         }
         .post-card:hover {
-            border-color: var(--accent-color);
+            border-color: var(--blue-light);
+            transform: translateY(-3px);
+        }
+
+        .post-card .post-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #1a2332;
+            border: 1px solid var(--border-color);
+        }
+        .post-card .post-content {
+            flex: 1;
         }
         .post-card h2 {
-            color: var(--accent-color);
+            color: var(--blue-light);
             font-size: 1.3rem;
         }
         .post-card .date {
             color: #8b949e;
             font-size: 0.85rem;
         }
+        .post-card .excerpt {
+            color: #8b949e;
+            font-size: 0.95rem;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
         .post-card a {
             display: inline-block;
-            margin-top: 10px;
             color: #238636;
             text-decoration: none;
             font-weight: bold;
@@ -89,6 +143,7 @@
         .post-card a:hover {
             color: #2ea043;
         }
+
         .loading {
             text-align: center;
             padding: 50px;
@@ -102,21 +157,30 @@
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
         }
+
+        @media (max-width: 600px) {
+            .post-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .post-card .post-image {
+                width: 100%;
+                height: 150px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">ZEKO STUDIO</div>
-        <div>
-            <a href="/">Home</a>
-            <a href="/blog">Blog</a>
-        </div>
+        <a href="/">🏠 Home</a>
+        <a href="/blog" class="rgb">📝 Blog</a>
     </nav>
 
     <header>
-        <h1>Resources</h1>
-        <p>Articles about security, automation, and software development</p>
+        <h1>📝 Tech Blog</h1>
+        <p>Security, Automation &amp; Software Development</p>
     </header>
 
     <div class="container">
@@ -126,7 +190,7 @@
     </div>
 
     <footer>
-        All Rights Reserved © Zeko Software Studio 2026
+        All Rights Reserved &copy; <a href="/" style="color:#58a6ff; text-decoration:none;">Zeko Software Studio</a> 2026
     </footer>
 
     <script>
@@ -135,7 +199,7 @@
 
         fetch(`https://api.github.com/repos/${repo}/contents/${path}`)
             .then(res => {
-                if (!res.ok) throw new Error('No posts found');
+                if (!res.ok) throw new Error('No posts');
                 return res.json();
             })
             .then(files => {
@@ -154,20 +218,27 @@
                 }
 
                 posts.forEach(post => {
-                    const link = document.createElement('div');
-                    link.className = 'post-card';
-                    link.innerHTML = `
-                        <h2>${post.name.replace('.md', '').replace(/-/g, ' ')}</h2>
-                        <div class="date">📅 2026-07-11</div>
-                        <a href="post.html?file=${post.name}">📖 Read Article →</a>
+                    const title = post.name.replace('.md', '').replace(/-/g, ' ');
+                    const excerpt = 'Read more about ' + title + '...';
+                    
+                    const card = document.createElement('div');
+                    card.className = 'post-card';
+                    card.innerHTML = `
+                        <img src="/blog-banner.png" alt="${title}" class="post-image" onerror="this.style.display='none'">
+                        <div class="post-content">
+                            <h2>${title}</h2>
+                            <div class="date">📅 2026-07-11</div>
+                            <div class="excerpt">${excerpt}</div>
+                            <a href="post.html?file=${post.name}">📖 Read Article →</a>
+                        </div>
                     `;
-                    container.appendChild(link);
+                    container.appendChild(card);
                 });
             })
             .catch(() => {
                 document.getElementById('posts').innerHTML = `
                     <div style="text-align:center; padding:50px; color:#8b949e;">
-                        📭 No posts found. Create your first post!
+                        📭 No posts found.
                     </div>
                 `;
             });
