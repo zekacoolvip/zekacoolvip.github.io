@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeko Software Studio</title>
+    <title>Zeko Software Studio - Gaming Macros, Security Tools & Custom Software</title>
+    <meta name="description" content="Zeko Software Studio - Clicker Pro gaming macro, Virus Scanner Pro antivirus, and custom software development.">
+    <meta name="keywords" content="Clicker Pro, Virus Scanner Pro, gaming macro, antivirus, custom software, automation tools">
     <style>
+        /* ===== ROOT VARIABLES ===== */
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
             --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
             --border-color: #30363d;
+            --blue-light: #58a6ff;
+            --blue-soft: #4d8aff;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -19,54 +23,74 @@
             color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, sans-serif;
             min-height: 100vh;
+            background: linear-gradient(135deg, #0d1117 0%, #1a2332 50%, #0d1b2a 100%);
         }
 
+        /* ===== NAVBAR ===== */
         nav {
-            background: var(--bg-color);
+            background: rgba(13, 17, 23, 0.9);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 15px 30px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-        nav .logo {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #00ff00;
+            gap: 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         nav a {
             color: var(--text-color);
             text-decoration: none;
-            margin-left: 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
         }
-        nav a:hover { color: var(--accent-color); }
+        nav a:hover {
+            color: var(--blue-light);
+        }
 
+        /* ===== RGB ANIMATION FOR BLOG ===== */
+        .rgb-blog {
+            animation: rgbMove 2s linear infinite;
+            font-weight: bold;
+        }
+        @keyframes rgbMove {
+            0% { color: #ff0000; }
+            17% { color: #ff8800; }
+            33% { color: #ffff00; }
+            50% { color: #00ff00; }
+            67% { color: #0088ff; }
+            83% { color: #8800ff; }
+            100% { color: #ff0000; }
+        }
+
+        /* ===== HEADER ===== */
         header {
             text-align: center;
             padding: 80px 20px 50px;
-            background: linear-gradient(135deg, var(--bg-color), var(--card-bg));
         }
         header h1 {
-            font-size: 3rem;
-            background: linear-gradient(90deg, #00ff00, #58a6ff, #8957e5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 3s infinite alternate;
-        }
-        @keyframes glow {
-            0% { filter: drop-shadow(0 0 5px rgba(0,255,0,0.3)); }
-            100% { filter: drop-shadow(0 0 20px rgba(88,166,255,0.5)); }
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            animation: rgbMove 3s linear infinite;
+            text-shadow: 0 0 30px rgba(88, 166, 255, 0.15);
         }
         header p {
             color: #8b949e;
             font-size: 1.2rem;
-            margin-top: 15px;
+            margin-top: 5px;
+            letter-spacing: 1px;
         }
 
+        /* ===== CONTAINER ===== */
         .container {
             max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 20px;
         }
         .grid {
             display: flex;
@@ -75,45 +99,59 @@
             justify-content: center;
         }
 
+        /* ===== CARDS ===== */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            width: 320px;
-            transition: 0.3s;
+            border-radius: 14px;
+            padding: 28px;
+            width: 330px;
+            transition: 0.4s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         .card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
+            border-color: var(--blue-light);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 35px rgba(88, 166, 255, 0.15);
         }
+
         .card .badge {
             display: inline-block;
-            padding: 4px 12px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 12px;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
+            width: fit-content;
+            border: 1px solid var(--blue-light);
+            color: var(--blue-light);
         }
         .card .badge-purple {
             border-color: #8957e5;
             color: #8957e5;
         }
+        .card .badge-gold {
+            border-color: #f0883e;
+            color: #f0883e;
+        }
+
         .card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
         .card p {
             color: #8b949e;
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
             flex: 1;
         }
+
         .card .btn-group {
             display: flex;
             flex-direction: column;
@@ -123,11 +161,14 @@
         .card .btn {
             display: block;
             text-align: center;
-            padding: 10px;
-            border-radius: 6px;
+            padding: 11px 16px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: 0.3s;
+            cursor: pointer;
+            border: none;
         }
         .btn-primary {
             background: #5865F2;
@@ -148,82 +189,123 @@
         .btn-secondary {
             border: 1px solid var(--border-color);
             color: var(--text-color);
+            background: transparent;
         }
         .btn-secondary:hover {
-            border-color: var(--accent-color);
+            border-color: var(--blue-light);
+            background: rgba(88, 166, 255, 0.05);
+        }
+        .btn-discord {
+            background: #5865F2;
+            color: white;
+        }
+        .btn-discord:hover {
+            background: #4752c4;
+            transform: scale(1.02);
+        }
+        .btn-youtube {
+            background: #ff0000;
+            color: white;
+        }
+        .btn-youtube:hover {
+            background: #cc0000;
+            transform: scale(1.02);
         }
 
+        /* ===== FOOTER ===== */
         footer {
             text-align: center;
             padding: 40px 20px;
             color: #8b949e;
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: var(--blue-light);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { gap: 30px; padding: 12px 20px; }
+            nav a { font-size: 1rem; }
+            header h1 { font-size: 2.2rem; }
+            .card { width: 100%; max-width: 380px; }
+        }
+        @media (max-width: 480px) {
+            nav { gap: 20px; flex-wrap: wrap; }
+            header h1 { font-size: 1.8rem; }
+            header p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- ===== NAVBAR ===== -->
     <nav>
-        <div class="logo">ZEKO STUDIO</div>
-        <div>
-            <a href="/">Home</a>
-            <a href="/blog">Blog</a>
-        </div>
+        <a href="/">🏠 Home</a>
+        <a href="/blog" class="rgb-blog">📝 Blog</a>
     </nav>
 
+    <!-- ===== HEADER ===== -->
     <header>
         <h1>Zeko Software Studio</h1>
-        <p>Advanced Gaming Macros, Security Tools & Custom Software</p>
+        <p>Advanced Gaming Macros, Security Tools &amp; Custom Software</p>
     </header>
 
+    <!-- ===== CARDS ===== -->
     <div class="container">
         <div class="grid">
 
-            <!-- Clicker Pro -->
+            <!-- ===== CARD 1: CLICKER PRO ===== -->
             <div class="card">
                 <div>
-                    <span class="badge">Gaming Macro</span>
+                    <span class="badge">🎮 Gaming Macro</span>
                     <h2>Clicker Pro 🔥</h2>
                     <p>The ultimate farming assistant. Humanized clicks, smart delays, and full stealth.</p>
                 </div>
                 <div class="btn-group">
-                    <a href="#clicker" class="btn btn-secondary">📖 View Details</a>
-                    <a href="https://discord.com/users/zekacoolvip" class="btn btn-primary">💬 Contact on Discord</a>
+                    <a href="https://www.youtube.com/watch?v=RDww4GAcwhg" target="_blank" class="btn btn-youtube">▶️ Watch on YouTube</a>
+                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="btn btn-discord">💬 Contact on Discord</a>
                 </div>
             </div>
 
-            <!-- Virus Scanner Pro -->
+            <!-- ===== CARD 2: VIRUS SCANNER PRO ===== -->
             <div class="card">
                 <div>
-                    <span class="badge badge-purple">Security Tool</span>
-                    <h2>Virus Scanner Pro 🛡️</h2>
-                    <p>Lightweight antivirus tool. Scan files, folders, and your entire system. Free & offline!</p>
+                    <span class="badge badge-purple">🛡️ Security Tool</span>
+                    <h2>Virus Scanner Pro</h2>
+                    <p>Lightweight antivirus tool. Scan files, folders, and your entire system. Free &amp; offline!</p>
                 </div>
                 <div class="btn-group">
                     <a href="/blog" class="btn btn-secondary">📖 Read Article</a>
-                    <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" class="btn btn-green">⬇️ Download Now</a>
+                    <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" target="_blank" class="btn btn-green">⬇️ Download Now</a>
                 </div>
             </div>
 
-            <!-- Custom Software -->
+            <!-- ===== CARD 3: CUSTOM SOFTWARE ===== -->
             <div class="card">
                 <div>
-                    <span class="badge">Premium Service</span>
+                    <span class="badge badge-gold">⚡ Premium Service</span>
                     <h2>Custom Software 🚀</h2>
                     <p>Custom bots, automation tools, and desktop apps built to your exact specifications.</p>
                 </div>
                 <div class="btn-group">
-                    <a href="#custom" class="btn btn-secondary">📖 View Details</a>
-                    <a href="https://discord.com/users/zekacoolvip" class="btn btn-primary">💬 Order Project</a>
+                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="btn btn-discord">💬 Order Project</a>
+                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="btn btn-secondary">📋 Discuss Details</a>
                 </div>
             </div>
 
         </div>
     </div>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
-        All Rights Reserved © Zeko Software Studio 2026
+        All Rights Reserved &copy; <a href="/">Zeko Software Studio</a> 2026
     </footer>
 
 </body>
