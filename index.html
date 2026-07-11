@@ -3,40 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ===== SEO META ===== -->
-    <title>Zeko Software Studio - Free Antivirus & Gaming Tools</title>
-    <meta name="description" content="Virus Scanner Pro - Free lightweight antivirus. Scan files, folders, and Windows system. 100% free and works offline!">
-    <meta name="keywords" content="Virus Scanner Pro, antivirus, free antivirus, gaming macro, Clicker Pro, custom software">
-    
-    <!-- ===== OPEN GRAPH (Facebook, Twitter, WhatsApp) ===== -->
-    <meta property="og:title" content="Virus Scanner Pro - Free Lightweight Antivirus">
-    <meta property="og:description" content="Download Virus Scanner Pro - Free antivirus tool. Scan files, folders, and your entire Windows system. Works offline! 100% free.">
-    <meta property="og:image" content="https://zekacoolvip.github.io/virus-scanner-banner.png">
-    <meta property="og:url" content="https://zekacoolvip.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Zeko Software Studio">
-    
-    <!-- ===== TWITTER CARDS ===== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Virus Scanner Pro - Free Lightweight Antivirus">
-    <meta name="twitter:description" content="Download Virus Scanner Pro - Free antivirus tool. Works offline! 100% free.">
-    <meta name="twitter:image" content="https://zekacoolvip.github.io/virus-scanner-banner.png">
-    
+    <title>Tech Blog - Zeko Software Studio</title>
     <style>
         /* ===== ROOT ===== */
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
             --text-color: #c9d1d9;
-            --border-color: #30363d;
             --blue-light: #58a6ff;
-            --blue-soft: #4d8aff;
+            --border-color: #30363d;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: linear-gradient(135deg, #0d0d0d 0%, #0d0d0d 40%, #0d0d0d 70%, #0d0d0d 100%);
+            background: linear-gradient(135deg, #0d1117 0%, #1a3a5c 40%, #0d2b4a 70%, #0d1117 100%);
             color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, sans-serif;
             min-height: 100vh;
@@ -83,143 +63,107 @@
         /* ===== HEADER ===== */
         header {
             text-align: center;
-            padding: 80px 20px 50px;
+            padding: 60px 20px 40px;
         }
         header h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
+            font-size: 2.8rem;
             animation: rgbMove 3s linear infinite;
-            text-shadow: 0 0 40px rgba(88, 166, 255, 0.2);
         }
         header p {
             color: #8b949e;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-top: 10px;
-            letter-spacing: 1px;
         }
 
         /* ===== CONTAINER ===== */
         .container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
 
-        /* ===== CARDS ===== */
-        .card {
+        /* ===== POST CARDS ===== */
+        .post-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 28px;
-            width: 330px;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
             transition: 0.4s;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            gap: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
-        .card:hover {
+        .post-card:hover {
             border-color: var(--blue-light);
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             box-shadow: 0 8px 35px rgba(88, 166, 255, 0.15);
         }
 
-        .card .badge {
-            display: inline-block;
-            padding: 4px 14px;
+        .post-card .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .post-card .post-header h2 {
+            color: var(--blue-light);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .post-card .post-header .date {
+            color: #8b949e;
+            font-size: 0.85rem;
+            background: rgba(255,255,255,0.05);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .post-card .post-excerpt {
+            color: #8b949e;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 5px 0;
+        }
+
+        .post-card .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        .post-card .post-footer .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .post-card .post-footer .tags span {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--blue-light);
+            padding: 3px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-            width: fit-content;
-            border: 1px solid var(--blue-light);
-            color: var(--blue-light);
+            border: 1px solid rgba(88, 166, 255, 0.2);
         }
-        .card .badge-purple {
-            border-color: #8957e5;
-            color: #8957e5;
-        }
-        .card .badge-gold {
-            border-color: #f0883e;
-            color: #f0883e;
-        }
-
-        .card h2 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-        }
-        .card p {
-            color: #8b949e;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            flex: 1;
-        }
-
-        .card .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .card .btn {
-            display: block;
-            text-align: center;
-            padding: 11px 16px;
-            border-radius: 8px;
+        .post-card .post-footer a {
+            color: #238636;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
             transition: 0.3s;
-            border: none;
-            cursor: pointer;
         }
-        .btn-primary {
-            background: #5865F2;
-            color: white;
+        .post-card .post-footer a:hover {
+            color: #2ea043;
         }
-        .btn-primary:hover {
-            background: #4752c4;
-            transform: scale(1.02);
-        }
-        .btn-green {
-            background: #238636;
-            color: white;
-        }
-        .btn-green:hover {
-            background: #2ea043;
-            transform: scale(1.02);
-        }
-        .btn-secondary {
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            background: transparent;
-        }
-        .btn-secondary:hover {
-            border-color: var(--blue-light);
-            background: rgba(88, 166, 255, 0.05);
-        }
-        .btn-discord {
-            background: #5865F2;
-            color: white;
-        }
-        .btn-discord:hover {
-            background: #4752c4;
-            transform: scale(1.02);
-        }
-        .btn-youtube {
-            background: #ff0000;
-            color: white;
-        }
-        .btn-youtube:hover {
-            background: #cc0000;
-            transform: scale(1.02);
+
+        /* ===== LOADING ===== */
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #8b949e;
         }
 
         /* ===== FOOTER ===== */
@@ -232,10 +176,17 @@
         }
 
         /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            nav { gap: 30px; padding: 12px 20px; }
-            header h1 { font-size: 2.2rem; }
-            .card { width: 100%; max-width: 380px; }
+        @media (max-width: 600px) {
+            .post-card .post-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .post-card .post-footer {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -249,55 +200,14 @@
 
     <!-- ===== HEADER ===== -->
     <header>
-        <h1>Zeko Software Studio</h1>
-        <p>Advanced Gaming Macros, Security Tools &amp; Custom Software</p>
+        <h1>📝 Tech Blog</h1>
+        <p>Security, Automation &amp; Software Development</p>
     </header>
 
-    <!-- ===== CARDS ===== -->
+    <!-- ===== POSTS ===== -->
     <div class="container">
-        <div class="grid">
-
-            <!-- ===== CARD 1: CLICKER PRO ===== -->
-            <div class="card">
-                <div>
-                    <span class="badge">🎮 Gaming Macro</span>
-                    <h2>Clicker Pro 🔥</h2>
-                    <p>"Master your clicks. Dominate the battlefield. Clicker Pro - the ultimate macro for Conquer Online."</p>
-                </div>
-                <div class="btn-group">
-                    <a href="https://zekacoolvip.github.io/blog/post.html?file=clicker-pro-en.md" target="_blank" class="btn btn-youtube">📖 Read Article →</a>
-                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="btn btn-discord">💬 Contact on Discord</a>
-                </div>
-            </div>
-
-            <!-- ===== CARD 2: VIRUS SCANNER PRO ===== -->
-            <div class="card">
-                <div>
-                    <span class="badge badge-purple">🛡️ Security Tool</span>
-                    <h2>Virus Scanner Pro</h2>
-                    <p>🔹 <strong>Lightweight</strong> - Uses only 50MB RAM</p>
-                    <p>🔹 <strong>Works Offline</strong> - No internet required</p>
-                    <p>🔹 <strong>VirusTotal</strong> - 70+ antivirus engines</p>
-                    <p>🔹 <strong>100% FREE</strong> - No hidden costs</p>
-                </div>
-                <div class="btn-group">
-                    <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" target="_blank" class="btn btn-green">⬇️ Download Now</a>
-                </div>
-            </div>
-
-            <!-- ===== CARD 3: CUSTOM SOFTWARE ===== -->
-            <div class="card">
-                <div>
-                    <span class="badge badge-gold">⚡ Premium Service</span>
-                    <h2>Custom Software 🚀</h2>
-                    <p>Custom bots, automation tools, and desktop apps built to your exact specifications.</p>
-                </div>
-                <div class="btn-group">
-                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="btn btn-discord">💬 Order Project</a>
-                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="btn btn-secondary">📋 Discuss Details</a>
-                </div>
-            </div>
-
+        <div id="posts">
+            <div class="loading">Loading posts...</div>
         </div>
     </div>
 
@@ -306,5 +216,73 @@
         All Rights Reserved &copy; <a href="/" style="color:#58a6ff; text-decoration:none;">Zeko Software Studio</a> 2026
     </footer>
 
+    <script>
+        const repo = 'zekacoolvip/zekacoolvip.github.io';
+        const path = 'blog/posts';
+
+        fetch(`https://api.github.com/repos/${repo}/contents/${path}`)
+            .then(res => {
+                if (!res.ok) throw new Error('No posts');
+                return res.json();
+            })
+            .then(files => {
+                const container = document.getElementById('posts');
+                container.innerHTML = '';
+
+                const posts = files.filter(f => f.name.endsWith('.md'));
+
+                if (posts.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align:center; padding:50px; color:#8b949e;">
+                            📭 No posts yet. Coming soon!
+                        </div>
+                    `;
+                    return;
+                }
+
+                posts.forEach(post => {
+                    const title = post.name.replace('.md', '').replace(/-/g, ' ');
+                    const fileName = post.name;
+
+                    // جلب محتوى المقال لاستخراج الـ tags
+                    fetch(post.download_url)
+                        .then(res => res.text())
+                        .then(content => {
+                            // استخراج الـ tags من Front Matter
+                            let tags = [];
+                            const tagMatch = content.match(/tags: \[(.*)\]/);
+                            if (tagMatch) {
+                                tags = tagMatch[1].split(',').map(t => t.trim());
+                            }
+
+                            const card = document.createElement('div');
+                            card.className = 'post-card';
+                            card.innerHTML = `
+                                <div class="post-header">
+                                    <h2>${title}</h2>
+                                    <span class="date">📅 2026-07-12</span>
+                                </div>
+                                <div class="post-excerpt">
+                                    ${title} - Read the full article to learn more about ${title}.
+                                </div>
+                                <div class="post-footer">
+                                    <div class="tags">
+                                        ${tags.map(t => `<span>#${t}</span>`).join('')}
+                                    </div>
+                                    <a href="post.html?file=${fileName}">📖 Read Article →</a>
+                                </div>
+                            `;
+                            container.appendChild(card);
+                        });
+                });
+            })
+            .catch(() => {
+                document.getElementById('posts').innerHTML = `
+                    <div style="text-align:center; padding:50px; color:#8b949e;">
+                        📭 No posts found.
+                    </div>
+                `;
+            });
+    </script>
 </body>
 </html>
