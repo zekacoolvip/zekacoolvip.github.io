@@ -2,8 +2,10 @@
 title: "Clicker Pro - أفضل برنامج تنين للكونكر اونلاين"
 date: 2026-07-12
 author: Zeko
-tags: [Clicker Pro, كونكر اونلاين, تنين, ماكرو, CPS, قتل وحوش]
+tags: [Clicker Pro, كونكر اونلاين, تنين, ماكرو, CPS]
 ---
+
+![Clicker Pro Interface](/photo123.png)
 
 # 🎯 Clicker Pro - أفضل برنامج تنين للكونكر اونلاين
 
@@ -42,7 +44,7 @@ tags: [Clicker Pro, كونكر اونلاين, تنين, ماكرو, CPS, قتل
 
 ## 📥 تحميل Clicker Pro
 
-[⬇️ تحميل Clicker Pro](https://www.mediafire.com/file/7iu7xe54biu55wa/Clicker_Pro.rar/file)
+[⬇️ تحميل Clicker Pro](https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file)
 
 ---
 
