@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Post - Zeko Studio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            line-height: 1.8;
+        }
+
+        nav {
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00ff00;
+        }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        nav a:hover { color: var(--accent-color); }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .post-header {
+            padding: 30px 0 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .post-header h1 {
+            color: #f0883e;
+            font-size: 2rem;
+        }
+        .post-header .meta {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .post-content {
+            font-size: 1.05rem;
+        }
+        .post-content h1, .post-content h2, .post-content h3 {
+            margin-top: 25px;
+        }
+        .post-content h1 { color: #f0883e; }
+        .post-content h2 { color: var(--accent-color); }
+        .post-content h3 { color: #238636; }
+        .post-content ul, .post-content ol {
+            padding-left: 25px;
+        }
+        .post-content code {
+            background: var(--card-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #f0883e;
+        }
+        .post-content pre {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+        .post-content a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8b949e;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ZEKO STUDIO</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/blog">Blog</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="post-content">
+            <div style="text-align:center; padding:60px 20px;">
+                <div style="font-size:2.5rem;">📖</div>
+                <div style="color:#8b949e;">Loading post...</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        All Rights Reserved © Zeko Software Studio 2026
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const fileName = params.get('file');
+
+        if (!fileName) {
+            document.getElementById('post-content').innerHTML = `
+                <div style="text-align:center; padding:60px 20px;">
+                    <h2 style="color:#f85149;">❌ No post specified</h2>
+                    <a href="/blog" style="color:#58a6ff;">⬅️ Back to Blog</a>
+                </div>
+            `;
+        } else {
+            const repo = 'zekacoolvip/zekacoolvip.github.io';
+            const path = `blog/posts/${fileName}`;
+
+            fetch(`https://raw.githubusercontent.com/${repo}/main/${path}`)
+                .then(res => {
+                    if (!res.ok) throw new Error('Post not found');
+                    return res.text();
+                })
+                .then(markdown => {
+                    let title = fileName.replace('.md', '').replace(/-/g, ' ');
+                    let content = markdown;
+
+                    // استخراج الـ Front Matter
+                    const fmMatch = markdown.match(/---\n([\s\S]*?)\n---/);
+                    if (fmMatch) {
+                        const titleMatch = fmMatch[1].match(/title: (.*)/);
+                        if (titleMatch) title = titleMatch[1];
+                        content = markdown.replace(/---\n[\s\S]*?\n---/, '').trim();
+                    }
+
+                    // تحويل Markdown لـ HTML (بسيط)
+                    let html = content
+                        .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                        .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                        .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+                        .replace(/`([^`]+)`/g, '<code>$1</code>')
+                        .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+                        .replace(/^- (.*$)/gm, '<li>$1</li>')
+                        .replace(/\n\n/g, '</p><p>')
+                        .replace(/\n/g, '<br>');
+
+                    html = '<p>' + html + '</p>';
+
+                    document.getElementById('post-content').innerHTML = `
+                        <div class="post-header">
+                            <h1>${title}</h1>
+                            <div class="meta">📅 2026-07-11 • ✍️ Zeko</div>
+                        </div>
+                        <div class="post-content">${html}</div>
+                        <div style="margin-top:30px;">
+                            <a href="/blog" style="color:#58a6ff;">⬅️ Back to Blog</a>
+                        </div>
+                    `;
+                })
+                .catch(() => {
+                    document.getElementById('post-content').innerHTML = `
+                        <div style="text-align:center; padding:60px 20px;">
+                            <h2 style="color:#f85149;">❌ Post not found</h2>
+                            <a href="/blog" style="color:#58a6ff;">⬅️ Back to Blog</a>
+                        </div>
+                    `;
+                });
+        }
+    </script>
+</body>
+</html>
