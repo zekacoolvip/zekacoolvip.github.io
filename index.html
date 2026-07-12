@@ -86,7 +86,7 @@
             font-size: 3.2rem;
             font-weight: 800;
             animation: rgbMove 3s linear infinite;
-            text-shadow: 0 0 40px rgba(88, 166, 255, 0.1);
+            text-shadow: none; /* خط حاد ونظيف بدون غبش */
         }
         header p {
             color: #8b949e;
@@ -248,25 +248,16 @@
             header p { font-size: 1rem; }
         }
     </style>
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-P5VK0GGKC6');
-</script>
+    <!-- Google tag (gtag.js) - المزرع بشكل صحيح داخل الـ Head بالـ ID الفعلي -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P5VK0GGKC6');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-400594022"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-400594022');
-</script>
 <body>
 
     <!-- ===== NAVBAR ===== -->
@@ -289,7 +280,7 @@
             <div class="card">
                 <div>
                     <span class="badge">🎮 Gaming Macro</span>
-                    <h2>Clicker Pro </h2>
+                    <h2>Clicker Pro</h2>
                     <p>The ultimate farming assistant. Humanized clicks, smart delays, and full stealth.</p>
                 </div>
                 <div class="btn-group">
@@ -317,7 +308,7 @@
             <div class="card">
                 <div>
                     <span class="badge badge-gold">⚡ Premium Service</span>
-                    <h2>Custom Software 🚀</h2>
+                    <h2>Custom Software</h2>
                     <p>Custom bots, automation tools, and desktop apps built to your exact specifications.</p>
                 </div>
                 <div class="btn-group">
