@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Post - Zeko Studio</title>
     <style>
-        .rgb {
-            animation: rgbMove 2.5s linear infinite;
-            font-weight: bold;
-        }
-        @keyframes rgbMove {
-            0% { color: #ff0000; }
-           17% { color: #ff8800; }
-           33% { color: #ffff00; }
-           50% { color: #00ff00; }
-           67% { color: #0088ff; }
-           83% { color: #8800ff; }
-          100% { color: #ff0000; }
-        }
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
@@ -34,6 +21,7 @@
             line-height: 1.8;
         }
 
+        /* ===== NAVBAR ===== */
         nav {
             background: var(--bg-color);
             border-bottom: 1px solid var(--border-color);
@@ -53,6 +41,17 @@
             margin-left: 20px;
         }
         nav a:hover { color: var(--accent-color); }
+
+        /* ===== RGB ANIMATION ===== */
+        .rgb {
+            animation: rgbMove 2.5s linear infinite;
+            font-weight: bold;
+        }
+        @keyframes rgbMove {
+            0% { color: #00FF00; }
+            50% { color: #00FFFF; }
+            100% { color: #5865F2; }
+        }
 
         .container {
             max-width: 800px;
@@ -117,20 +116,22 @@
         }
     </style>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P5VK0GGKC6');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P5VK0GGKC6');
+    </script>
 </head>
 <body>
 
     <nav>
-        <a href="/">Home</a>
-        <a href="/blog" class="rgb">Blog</a>
+        <div class="logo">ZEKO STUDIO</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/blog" class="rgb">Blog</a>
+        </div>
     </nav>
 
     <div class="container">
@@ -170,7 +171,6 @@
                     let title = fileName.replace('.md', '').replace(/-/g, ' ');
                     let content = markdown;
 
-                    // استخراج الـ Front Matter
                     const fmMatch = markdown.match(/---\n([\s\S]*?)\n---/);
                     if (fmMatch) {
                         const titleMatch = fmMatch[1].match(/title: (.*)/);
@@ -178,7 +178,6 @@
                         content = markdown.replace(/---\n[\s\S]*?\n---/, '').trim();
                     }
 
-                    // تحويل Markdown لـ HTML (بسيط)
                     let html = content
                         .replace(/^# (.*$)/gm, '<h1>$1</h1>')
                         .replace(/^## (.*$)/gm, '<h2>$1</h2>')
