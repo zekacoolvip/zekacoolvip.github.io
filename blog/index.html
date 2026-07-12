@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,13 +51,9 @@
             font-weight: bold;
         }
         @keyframes rgbMove {
-            0% { color: #ff0000; }
-            17% { color: #ff8800; }
-            33% { color: #ffff00; }
-            50% { color: #00ff00; }
-            67% { color: #0088ff; }
-            83% { color: #8800ff; }
-            100% { color: #ff0000; }
+            0% { color: #00FF00; }
+            50% { color: #00FFFF; }
+            100% { color: #5865F2; }
         }
 
         /* ===== HEADER ===== */
@@ -67,6 +63,8 @@
         }
         header h1 {
             font-size: 2.8rem;
+            font-weight: 800;
+            text-shadow: none; /* حروف حادة ونظيفة */
             animation: rgbMove 3s linear infinite;
         }
         header p {
@@ -190,14 +188,13 @@
         }
     </style>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P5VK0GGKC6');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P5VK0GGKC6');
+    </script>
 </head>
 <body>
 
@@ -253,11 +250,9 @@
                     const title = post.name.replace('.md', '').replace(/-/g, ' ');
                     const fileName = post.name;
 
-                    // جلب محتوى المقال لاستخراج الـ tags
                     fetch(post.download_url)
                         .then(res => res.text())
                         .then(content => {
-                            // استخراج الـ tags من Front Matter
                             let tags = [];
                             const tagMatch = content.match(/tags: \[(.*)\]/);
                             if (tagMatch) {
