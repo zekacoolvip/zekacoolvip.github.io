@@ -65,7 +65,7 @@ Get premium, undetected access at competitive prices. We offer structured subscr
 
 Ready to unlock the ultimate auto-hunting experience? Join our growing community of elite players today.
 
-* 💬**Discord Username:** `zekacoolvip` (Add me directly to purchase or request a demo)
+* 💬**Discord Username:** `zekacoolvip` (Add me directly to purchase)
 * 🌐**Official Website:** [zekacoolvip.github.io](https://zekacoolvip.github.io/)
 
 ---
