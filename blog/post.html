@@ -1,151 +1,260 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html class="dark" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/zeko.png">
-    <title>Read Post - Zeko Studio</title>
-    <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --border-color: #30363d;
-        }
+    <title>Read Post - Zeko Software Studio</title>
+    
+    <!-- ===== SEO ===== -->
+    <meta name="description" content="Read detailed posts about gaming macros, security tools, and custom software development at Zeko Studio."/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://zekacoolvip.github.io/blog/posts/post.html"/>
+    
+    <!-- ===== FONTS & STYLES ===== -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        secondary: "#fbabff",
+                        "on-surface-variant": "#c7c6ca",
+                        tertiary: "#c0c1ff",
+                        "on-secondary": "#580065",
+                        "outline-variant": "#46464a",
+                        background: "#051424",
+                        surface: "#051424",
+                        "surface-container": "#122131",
+                        "surface-container-lowest": "#010f1f",
+                        "on-surface": "#d4e4fa",
+                        "on-background": "#d4e4fa",
+                        "surface-variant": "#273647",
+                        "secondary-container": "#ae05c6",
+                        "on-secondary-container": "#ffd8fd",
+                        "tertiary-container": "#020039",
+                        "on-tertiary-container": "#6568f3",
+                        border: "#30363d"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Geist"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #051424;
+            color: #d4e4fa;
+            font-family: 'Geist', sans-serif;
+            scroll-behavior: smooth;
             line-height: 1.8;
         }
 
-        /* ===== NAVBAR ===== */
-        nav {
-            background: var(--bg-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav .logo {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #00ff00;
-        }
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        nav a:hover { color: var(--accent-color); }
-
-        /* ===== RGB ANIMATION ===== */
-        .rgb {
-            animation: rgbMove 2.5s linear infinite;
-            font-weight: bold;
-        }
-        @keyframes rgbMove {
-            0% { color: #00FF00; }
-            50% { color: #00FFFF; }
-            100% { color: #5865F2; }
+        .glass-card {
+            background: rgba(28, 43, 60, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        .glass-card:hover {
+            border-color: rgba(251, 171, 255, 0.3);
+            box-shadow: 0 20px 40px -20px rgba(251, 171, 255, 0.1);
         }
 
-        .post-header {
-            padding: 30px 0 20px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 30px;
-        }
-        .post-header h1 {
-            color: #f0883e;
-            font-size: 2rem;
-        }
-        .post-header .meta {
-            color: #8b949e;
-            font-size: 0.9rem;
-            margin-top: 10px;
+        .magenta-glow {
+            text-shadow: 0 0 20px rgba(251, 171, 255, 0.3);
         }
 
-        .post-content {
-            font-size: 1.05rem;
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
         }
-        .post-content h1, .post-content h2, .post-content h3 {
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #051424;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #273647;
+            border-radius: 10px;
+        }
+
+        .post-content h1 {
+            color: #fbabff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .post-content h2 {
+            color: #c0c1ff;
+            font-size: 1.6rem;
+            font-weight: 600;
             margin-top: 25px;
+            margin-bottom: 12px;
         }
-        .post-content h1 { color: #f0883e; }
-        .post-content h2 { color: var(--accent-color); }
-        .post-content h3 { color: #238636; }
+        .post-content h3 {
+            color: #58a6ff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .post-content p {
+            margin-bottom: 16px;
+            color: #c9d1d9;
+        }
         .post-content ul, .post-content ol {
             padding-left: 25px;
+            margin-bottom: 16px;
+            color: #c9d1d9;
+        }
+        .post-content li {
+            margin-bottom: 6px;
         }
         .post-content code {
-            background: var(--card-bg);
+            background: rgba(28, 43, 60, 0.6);
             padding: 2px 8px;
             border-radius: 4px;
-            color: #f0883e;
+            color: #fbabff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
         }
         .post-content pre {
-            background: var(--card-bg);
-            padding: 15px;
-            border-radius: 8px;
+            background: rgba(28, 43, 60, 0.6);
+            padding: 16px;
+            border-radius: 10px;
             overflow-x: auto;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin: 16px 0;
+        }
+        .post-content pre code {
+            background: transparent;
+            padding: 0;
+            color: #c9d1d9;
         }
         .post-content a {
-            color: var(--accent-color);
+            color: #58a6ff;
             text-decoration: none;
+            border-bottom: 1px solid rgba(88, 166, 255, 0.3);
+            transition: 0.2s;
         }
         .post-content a:hover {
-            text-decoration: underline;
+            color: #fbabff;
+            border-bottom-color: rgba(251, 171, 255, 0.5);
         }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #8b949e;
-            border-top: 1px solid var(--border-color);
-            margin-top: 60px;
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .post-content blockquote {
+            border-right: 3px solid #fbabff;
+            padding: 12px 20px;
+            margin: 16px 0;
+            background: rgba(251, 171, 255, 0.05);
+            border-radius: 8px;
+            color: #c7c6ca;
+        }
+        .post-content hr {
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin: 30px 0;
         }
     </style>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-P5VK0GGKC6');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P5VK0GGKC6');
     </script>
 </head>
-<body>
+<body class="custom-scrollbar overflow-x-hidden">
 
-    <nav>
-        <div class="logo">ZEKO STUDIO</div>
-        <div>
-            <a href="/">Home</a>
-            <a href="/blog" class="rgb">Blog</a>
+    <!-- ===== NAVIGATION (مطابق للرئيسية) ===== -->
+    <nav class="bg-background/80 backdrop-blur-md text-secondary sticky top-0 z-50 border-b border-white/10 shadow-sm transition-all duration-300">
+        <div class="flex justify-between items-center px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto" style="padding-left: 24px; padding-right: 24px; max-width: 1280px;">
+            <a href="/" class="flex items-center gap-3 cursor-pointer group">
+                <svg class="shrink-0 transition-transform duration-300 group-hover:scale-105" fill="none" height="36" viewBox="0 0 40 40" width="36" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="zekoMark" gradientUnits="userSpaceOnUse" x1="2" x2="38" y1="2" y2="38">
+                            <stop offset="0" stop-color="#fbabff"/>
+                            <stop offset="1" stop-color="#6568f3"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 1.5L37.5 11V29L20 38.5L2.5 29V11L20 1.5Z" fill="rgba(251,171,255,0.05)" stroke="url(#zekoMark)" stroke-width="1.5"/>
+                    <path d="M15 14H25L15 26H25" fill="none" stroke="url(#zekoMark)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+                </svg>
+                <div class="flex flex-col leading-none">
+                    <span class="font-headline-lg text-[19px] font-black tracking-tighter bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent">ZEKO</span>
+                    <span class="font-label-sm text-[9px] tracking-[0.28em] text-on-surface-variant uppercase mt-1">Software Studio</span>
+                </div>
+            </a>
+            <div class="flex items-center gap-8">
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="/">Home</a>
+                <a class="font-label-sm text-label-sm text-secondary border-b-2 border-secondary pb-1" href="/blog">Blog</a>
+            </div>
         </div>
     </nav>
 
-    <div class="container">
+    <!-- ===== POST CONTENT ===== -->
+    <main class="max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-16">
         <div id="post-content">
-            <div style="text-align:center; padding:60px 20px;">
-                <div style="font-size:2.5rem;">📖</div>
-                <div style="color:#8b949e;">Loading post...</div>
+            <!-- Loading State -->
+            <div class="glass-card p-12 text-center">
+                <div class="text-5xl mb-4">📖</div>
+                <div class="text-on-surface-variant text-lg">Loading post...</div>
+                <div class="mt-4 flex justify-center">
+                    <div class="w-8 h-8 border-4 border-secondary/30 border-t-secondary rounded-full animate-spin"></div>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer>
-        All Rights Reserved © Zeko Software Studio 2026
+    <!-- ===== FOOTER (مطابق للرئيسية) ===== -->
+    <footer class="bg-surface-container-lowest text-on-surface font-body-md text-body-md border-t border-white/5 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-6 max-w-7xl mx-auto gap-6">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <div class="flex items-center gap-2.5">
+                    <svg fill="none" height="30" viewBox="0 0 40 40" width="30" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="zekoMarkFooter" gradientUnits="userSpaceOnUse" x1="2" x2="38" y1="2" y2="38">
+                                <stop offset="0" stop-color="#fbabff"/>
+                                <stop offset="1" stop-color="#6568f3"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 1.5L37.5 11V29L20 38.5L2.5 29V11L20 1.5Z" fill="rgba(251,171,255,0.05)" stroke="url(#zekoMarkFooter)" stroke-width="1.5"/>
+                        <path d="M15 14H25L15 26H25" fill="none" stroke="url(#zekoMarkFooter)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+                    </svg>
+                    <span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent" style="font-size: 24px; font-weight: 900;">ZEKO</span>
+                </div>
+                <p class="text-on-surface-variant text-sm max-w-xs text-center md:text-left opacity-80">
+                    High-end software engineering for the modern digital era.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 my-4 md:my-0">
+                <a class="text-on-surface-variant hover:text-secondary underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="https://discord.com/users/zekacoolvip" target="_blank">Discord</a>
+            </div>
+            <div class="text-on-surface-variant opacity-80 text-sm">
+                All Rights Reserved &copy; Zeko Software Studio 2026
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -154,9 +263,14 @@
 
         if (!fileName) {
             document.getElementById('post-content').innerHTML = `
-                <div style="text-align:center; padding:60px 20px;">
-                    <h2 style="color:#f85149;">❌ No post specified</h2>
-                    <a href="/blog" style="color:#58a6ff;">⬅️ Back to Blog</a>
+                <div class="glass-card p-12 text-center">
+                    <div class="text-5xl mb-4">❌</div>
+                    <h2 class="text-2xl font-bold text-[#f85149] mb-3">No post specified</h2>
+                    <p class="text-on-surface-variant mb-6">Please provide a valid article filename.</p>
+                    <a href="/blog" class="inline-flex items-center gap-2 text-secondary hover:text-tertiary transition-colors">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                        Back to Blog
+                    </a>
                 </div>
             `;
         } else {
@@ -171,25 +285,31 @@
                 .then(markdown => {
                     let title = fileName.replace('.md', '').replace(/-/g, ' ');
                     let content = markdown;
+                    let date = '2026-07-11';
 
+                    // Extract Frontmatter
                     const fmMatch = markdown.match(/---\n([\s\S]*?)\n---/);
                     if (fmMatch) {
                         const titleMatch = fmMatch[1].match(/title: (.*)/);
                         if (titleMatch) title = titleMatch[1];
+                        const dateMatch = fmMatch[1].match(/date: (.*)/);
+                        if (dateMatch) date = dateMatch[1];
                         content = markdown.replace(/---\n[\s\S]*?\n---/, '').trim();
                     }
 
+                    // Convert Markdown to HTML
                     let html = content
-                        .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" style="max-width:100%; height:auto; border-radius:10px; margin:20px 0; border:1px solid var(--border-color);">')
-                        .replace(/^---$/gm, '<hr style="border:0; border-top:1px solid var(--border-color); margin:30px 0;">')
+                        .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">')
+                        .replace(/^---$/gm, '<hr>')
                         .replace(/^# (.*$)/gm, '<h1>$1</h1>')
                         .replace(/^## (.*$)/gm, '<h2>$1</h2>')
                         .replace(/^### (.*$)/gm, '<h3>$1</h3>')
                         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                         .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
                         .replace(/`([^`]+)`/g, '<code>$1</code>')
                         .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+                        .replace(/^> (.*$)/gm, '<blockquote>$1</blockquote>')
                         .replace(/^- (.*$)/gm, '<li>$1</li>')
                         .replace(/\n\n/g, '</p><p>')
                         .replace(/\n/g, '<br>');
@@ -197,25 +317,42 @@
                     html = '<p>' + html + '</p>';
 
                     document.getElementById('post-content').innerHTML = `
-                        <div class="post-header">
-                            <h1>${title}</h1>
-                            <div class="meta">📅 2026-07-11 • ✍️ Zeko</div>
-                        </div>
-                        <div class="post-content">${html}</div>
-                        <div style="margin-top:30px;">
-                            <a href="/blog" style="color:#58a6ff;">⬅️ Back to Blog</a>
+                        <div class="glass-card p-8 md:p-12">
+                            <div class="mb-8 pb-6 border-b border-white/10">
+                                <h1 class="text-3xl md:text-4xl font-bold text-secondary magenta-glow">${title}</h1>
+                                <div class="flex items-center gap-4 mt-4 text-sm text-on-surface-variant">
+                                    <span>📅 ${date}</span>
+                                    <span>•</span>
+                                    <span>✍️ Zeko Studio</span>
+                                    <span>•</span>
+                                    <span>⏱️ 5 min read</span>
+                                </div>
+                            </div>
+                            <div class="post-content">${html}</div>
+                            <div class="mt-10 pt-6 border-t border-white/10">
+                                <a href="/blog" class="inline-flex items-center gap-2 text-secondary hover:text-tertiary transition-colors">
+                                    <span class="material-symbols-outlined">arrow_back</span>
+                                    Back to Blog
+                                </a>
+                            </div>
                         </div>
                     `;
                 })
                 .catch(() => {
                     document.getElementById('post-content').innerHTML = `
-                        <div style="text-align:center; padding:60px 20px;">
-                            <h2 style="color:#f85149;">❌ Post not found</h2>
-                            <a href="/blog" style="color:#58a6ff;">⬅️ Back to Blog</a>
+                        <div class="glass-card p-12 text-center">
+                            <div class="text-5xl mb-4">🔍</div>
+                            <h2 class="text-2xl font-bold text-[#f85149] mb-3">Post not found</h2>
+                            <p class="text-on-surface-variant mb-6">The article you're looking for doesn't exist or has been moved.</p>
+                            <a href="/blog" class="inline-flex items-center gap-2 text-secondary hover:text-tertiary transition-colors">
+                                <span class="material-symbols-outlined">arrow_back</span>
+                                Back to Blog
+                            </a>
                         </div>
                     `;
                 });
         }
     </script>
+
 </body>
 </html>
