@@ -1,226 +1,225 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html class="dark" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/zeko.png">
-    <title>Tech Blog - Zeko Software Studio</title>
+    <title>Blog - Zeko Software Studio</title>
+    
+    <!-- ===== SEO ===== -->
+    <meta name="description" content="Read the latest articles about gaming macros, security tools, automation, and custom software development at Zeko Studio."/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="canonical" href="https://zekacoolvip.github.io/blog/"/>
+    
+    <!-- ===== FONTS & STYLES ===== -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        secondary: "#fbabff",
+                        "on-surface-variant": "#c7c6ca",
+                        tertiary: "#c0c1ff",
+                        "on-secondary": "#580065",
+                        "outline-variant": "#46464a",
+                        background: "#051424",
+                        surface: "#051424",
+                        "surface-container": "#122131",
+                        "surface-container-lowest": "#010f1f",
+                        "on-surface": "#d4e4fa",
+                        "on-background": "#d4e4fa",
+                        "surface-variant": "#273647",
+                        "secondary-container": "#ae05c6",
+                        "on-secondary-container": "#ffd8fd",
+                        "tertiary-container": "#020039",
+                        "on-tertiary-container": "#6568f3"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Geist"]
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* ===== ROOT ===== */
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-color: #c9d1d9;
-            --blue-light: #58a6ff;
-            --border-color: #30363d;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: linear-gradient(135deg, #0d1117 0%, #1a3a5c 40%, #0d2b4a 70%, #0d1117 100%);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            min-height: 100vh;
+            background-color: #051424;
+            color: #d4e4fa;
+            font-family: 'Geist', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        /* ===== NAVBAR ===== */
-        nav {
-            background: rgba(13, 17, 23, 0.85);
+        .glass-card {
+            background: rgba(28, 43, 60, 0.4);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        nav a:hover { color: var(--blue-light); }
-
-        /* ===== RGB ANIMATION ===== */
-        .rgb {
-            animation: rgbMove 2.5s linear infinite;
-            font-weight: bold;
-        }
-        @keyframes rgbMove {
-            0% { color: #00FF00; }
-            50% { color: #00FFFF; }
-            100% { color: #5865F2; }
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            text-align: center;
-            padding: 60px 20px 40px;
-        }
-        header h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            text-shadow: none; /* حروف حادة ونظيفة */
-            animation: rgbMove 3s linear infinite;
-        }
-        header p {
-            color: #8b949e;
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-
-        /* ===== CONTAINER ===== */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* ===== POST CARDS ===== */
-        .post-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 25px;
-            transition: 0.4s;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .post-card:hover {
-            border-color: var(--blue-light);
+
+        .glass-card:hover {
+            border-color: rgba(251, 171, 255, 0.3);
             transform: translateY(-4px);
-            box-shadow: 0 8px 35px rgba(88, 166, 255, 0.15);
+            box-shadow: 0 20px 40px -20px rgba(251, 171, 255, 0.1);
         }
 
-        .post-card .post-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .magenta-glow {
+            text-shadow: 0 0 20px rgba(251, 171, 255, 0.3);
         }
-        .post-card .post-header h2 {
-            color: var(--blue-light);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0;
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
         }
-        .post-card .post-header .date {
-            color: #8b949e;
-            font-size: 0.85rem;
-            background: rgba(255,255,255,0.05);
-            padding: 4px 12px;
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #051424;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #273647;
+            border-radius: 10px;
+        }
+
+        .hero-mesh {
+            background: radial-gradient(circle at 50% 40%, rgba(174, 5, 198, 0.12) 0%, transparent 55%),
+                        radial-gradient(circle at 15% 80%, rgba(101, 104, 243, 0.1) 0%, transparent 45%);
+        }
+
+        .post-card .tags span {
+            background: rgba(251, 171, 255, 0.1);
+            color: #fbabff;
+            padding: 2px 12px;
             border-radius: 20px;
-            border: 1px solid var(--border-color);
+            font-size: 0.7rem;
+            border: 1px solid rgba(251, 171, 255, 0.15);
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        .post-card .post-excerpt {
-            color: #8b949e;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin: 5px 0;
-        }
-
-        .post-card .post-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
-        }
-        .post-card .post-footer .tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .post-card .post-footer .tags span {
-            background: rgba(88, 166, 255, 0.1);
-            color: var(--blue-light);
-            padding: 3px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            border: 1px solid rgba(88, 166, 255, 0.2);
-        }
-        .post-card .post-footer a {
-            color: #238636;
+        .post-card .read-link {
+            color: #c0c1ff;
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
-        }
-        .post-card .post-footer a:hover {
-            color: #2ea043;
-        }
-
-        /* ===== LOADING ===== */
-        .loading {
-            text-align: center;
-            padding: 50px;
-            color: #8b949e;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
-        /* ===== FOOTER ===== */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #8b949e;
-            border-top: 1px solid var(--border-color);
-            margin-top: 60px;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 600px) {
-            .post-card .post-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-            .post-card .post-footer {
-                flex-direction: column;
-                gap: 12px;
-                align-items: flex-start;
-            }
+        .post-card .read-link:hover {
+            color: #fbabff;
+            transform: translateX(4px);
         }
     </style>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-P5VK0GGKC6');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P5VK0GGKC6');
     </script>
 </head>
-<body>
+<body class="custom-scrollbar overflow-x-hidden">
 
-    <!-- ===== NAVBAR ===== -->
-    <nav>
-        <a href="/">Home</a>
-        <a href="/blog" class="rgb">Blog</a>
+    <!-- ===== NAVIGATION (مطابق للرئيسية) ===== -->
+    <nav class="bg-background/80 backdrop-blur-md text-secondary sticky top-0 z-50 border-b border-white/10 shadow-sm transition-all duration-300">
+        <div class="flex justify-between items-center px-4 md:px-6 py-4 max-w-7xl mx-auto">
+            <a href="/" class="flex items-center gap-3 cursor-pointer group">
+                <svg class="shrink-0 transition-transform duration-300 group-hover:scale-105" fill="none" height="36" viewBox="0 0 40 40" width="36" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="zekoMark" gradientUnits="userSpaceOnUse" x1="2" x2="38" y1="2" y2="38">
+                            <stop offset="0" stop-color="#fbabff"/>
+                            <stop offset="1" stop-color="#6568f3"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 1.5L37.5 11V29L20 38.5L2.5 29V11L20 1.5Z" fill="rgba(251,171,255,0.05)" stroke="url(#zekoMark)" stroke-width="1.5"/>
+                    <path d="M15 14H25L15 26H25" fill="none" stroke="url(#zekoMark)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+                </svg>
+                <div class="flex flex-col leading-none">
+                    <span class="font-headline-lg text-[19px] font-black tracking-tighter bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent">ZEKO</span>
+                    <span class="font-label-sm text-[9px] tracking-[0.28em] text-on-surface-variant uppercase mt-1">Software Studio</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="/">Home</a>
+                <a class="font-label-sm text-label-sm text-secondary border-b-2 border-secondary pb-1" href="/blog">Blog</a>
+            </div>
+            <button class="md:hidden text-secondary">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
     </nav>
 
     <!-- ===== HEADER ===== -->
-    <header>
-        <h1>Tech Blog</h1>
-        <p>Security, Automation &amp; Software Development</p>
+    <header class="relative overflow-hidden px-4 md:px-6 py-16 md:py-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 hero-mesh"></div>
+            <div class="absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/10 blur-[100px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-background/10 via-background/50 to-background"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-3xl mx-auto">
+            <h1 class="font-headline-xl text-4xl md:text-6xl font-bold tracking-tighter">
+                <span class="bg-gradient-to-r from-secondary via-secondary to-tertiary bg-clip-text text-transparent magenta-glow">Tech Blog</span>
+            </h1>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-4 text-lg">
+                Security, Automation &amp; Software Development
+            </p>
+            <div class="w-24 h-1 bg-secondary rounded-full mx-auto mt-6"></div>
+        </div>
     </header>
 
-    <!-- ===== POSTS ===== -->
-    <div class="container">
+    <!-- ===== POSTS LIST ===== -->
+    <main class="max-w-4xl mx-auto px-4 md:px-6 pb-16">
         <div id="posts">
-            <div class="loading">Loading posts...</div>
+            <!-- Loading State -->
+            <div class="glass-card p-12 text-center">
+                <div class="text-5xl mb-4">📖</div>
+                <div class="text-on-surface-variant text-lg">Loading posts...</div>
+                <div class="mt-4 flex justify-center">
+                    <div class="w-8 h-8 border-4 border-secondary/30 border-t-secondary rounded-full animate-spin"></div>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        All Rights Reserved &copy; <a href="/" style="color:#58a6ff; text-decoration:none;">Zeko Software Studio</a> 2026
+    <!-- ===== FOOTER (مطابق للرئيسية) ===== -->
+    <footer class="bg-surface-container-lowest text-on-surface font-body-md text-body-md border-t border-white/5 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-6 max-w-7xl mx-auto gap-6">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <div class="flex items-center gap-2.5">
+                    <svg fill="none" height="30" viewBox="0 0 40 40" width="30" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="zekoMarkFooter" gradientUnits="userSpaceOnUse" x1="2" x2="38" y1="2" y2="38">
+                                <stop offset="0" stop-color="#fbabff"/>
+                                <stop offset="1" stop-color="#6568f3"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 1.5L37.5 11V29L20 38.5L2.5 29V11L20 1.5Z" fill="rgba(251,171,255,0.05)" stroke="url(#zekoMarkFooter)" stroke-width="1.5"/>
+                        <path d="M15 14H25L15 26H25" fill="none" stroke="url(#zekoMarkFooter)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+                    </svg>
+                    <span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent" style="font-size: 24px; font-weight: 900;">ZEKO</span>
+                </div>
+                <p class="text-on-surface-variant text-sm max-w-xs text-center md:text-left opacity-80">
+                    High-end software engineering for the modern digital era.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 my-4 md:my-0">
+                <a class="text-on-surface-variant hover:text-secondary underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="https://discord.com/users/zekacoolvip" target="_blank">Discord</a>
+            </div>
+            <div class="text-on-surface-variant opacity-80 text-sm">
+                All Rights Reserved &copy; Zeko Software Studio 2026
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -240,12 +239,17 @@
 
                 if (posts.length === 0) {
                     container.innerHTML = `
-                        <div style="text-align:center; padding:50px; color:#8b949e;">
-                            📭 No posts yet. Coming soon!
+                        <div class="glass-card p-12 text-center">
+                            <div class="text-5xl mb-4">📭</div>
+                            <h2 class="text-2xl font-bold text-secondary mb-3">No posts yet</h2>
+                            <p class="text-on-surface-variant">Coming soon! Stay tuned for updates.</p>
                         </div>
                     `;
                     return;
                 }
+
+                // ترتيب المقالات (الأحدث أولاً)
+                posts.reverse();
 
                 posts.forEach(post => {
                     const title = post.name.replace('.md', '').replace(/-/g, ' ');
@@ -255,26 +259,51 @@
                         .then(res => res.text())
                         .then(content => {
                             let tags = [];
-                            const tagMatch = content.match(/tags: \[(.*)\]/);
-                            if (tagMatch) {
-                                tags = tagMatch[1].split(',').map(t => t.trim());
+                            let date = '2026-07-12';
+                            let excerpt = '';
+
+                            // استخراج الـ Frontmatter
+                            const fmMatch = content.match(/---\n([\s\S]*?)\n---/);
+                            if (fmMatch) {
+                                const tagMatch = fmMatch[1].match(/tags: \[(.*)\]/);
+                                if (tagMatch) {
+                                    tags = tagMatch[1].split(',').map(t => t.trim());
+                                }
+                                const dateMatch = fmMatch[1].match(/date: (.*)/);
+                                if (dateMatch) {
+                                    date = dateMatch[1];
+                                }
+                                const excerptMatch = fmMatch[1].match(/excerpt: (.*)/);
+                                if (excerptMatch) {
+                                    excerpt = excerptMatch[1];
+                                }
+                            }
+
+                            // لو مفيش excerpt، خد أول 120 حرف من المحتوى
+                            if (!excerpt) {
+                                const cleanContent = content.replace(/---\n[\s\S]*?\n---/, '').trim();
+                                excerpt = cleanContent.substring(0, 120) + '...';
                             }
 
                             const card = document.createElement('div');
-                            card.className = 'post-card';
+                            card.className = 'glass-card p-6 md:p-8 mb-6 post-card';
+
                             card.innerHTML = `
-                                <div class="post-header">
-                                    <h2>${title}</h2>
-                                    <span class="date">📅 2026-07-12</span>
+                                <div class="flex flex-wrap justify-between items-start gap-4 mb-3">
+                                    <h2 class="text-xl md:text-2xl font-bold text-secondary">${title}</h2>
+                                    <span class="text-sm text-on-surface-variant bg-white/5 px-3 py-1 rounded-full border border-white/10 whitespace-nowrap">📅 ${date}</span>
                                 </div>
-                                <div class="post-excerpt">
-                                    ${title} - Read the full article to learn more about ${title}.
-                                </div>
-                                <div class="post-footer">
-                                    <div class="tags">
-                                        ${tags.map(t => `<span>#${t}</span>`).join('')}
+                                <p class="text-on-surface-variant text-base leading-relaxed mb-4">
+                                    ${excerpt}
+                                </p>
+                                <div class="flex flex-wrap justify-between items-center gap-4 pt-4 border-t border-white/10">
+                                    <div class="tags flex flex-wrap gap-2">
+                                        ${tags.length > 0 ? tags.map(t => `<span>#${t}</span>`).join('') : '<span class="text-on-surface-variant/50 text-xs">No tags</span>'}
                                     </div>
-                                    <a href="post.html?file=${fileName}">📖 Read Article →</a>
+                                    <a href="post.html?file=${fileName}" class="read-link">
+                                        Read Article
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </a>
                                 </div>
                             `;
                             container.appendChild(card);
@@ -283,11 +312,14 @@
             })
             .catch(() => {
                 document.getElementById('posts').innerHTML = `
-                    <div style="text-align:center; padding:50px; color:#8b949e;">
-                        📭 No posts found.
+                    <div class="glass-card p-12 text-center">
+                        <div class="text-5xl mb-4">🔍</div>
+                        <h2 class="text-2xl font-bold text-[#f85149] mb-3">No posts found</h2>
+                        <p class="text-on-surface-variant">Could not load articles. Please check back later.</p>
                     </div>
                 `;
             });
     </script>
+
 </body>
 </html>
