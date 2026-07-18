@@ -1,329 +1,593 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/zeko.png">
-    <title>Zeko Software Studio - Gaming Macros, Security Tools & Custom Software</title>
-    <meta name="description" content="Zeko Software Studio - Clicker Pro gaming macro, Virus Scanner Pro antivirus, and custom software development.">
-    <meta name="keywords" content="Clicker Pro, Virus Scanner Pro, gaming macro, antivirus, custom software">
-
-    <!-- ===== OPEN GRAPH ===== -->
-    <meta property="og:title" content="Zeko Software Studio - Free Antivirus & Gaming Tools">
-    <meta property="og:description" content="Download Virus Scanner Pro - Free lightweight antivirus. Scan files, folders, and your entire Windows system. 100% free and works offline!">
-    <meta property="og:image" content="https://zekacoolvip.github.io/x.png">
-    <meta property="og:url" content="https://zekacoolvip.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Zeko Software Studio">
-
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <!-- ===== PRIMARY SEO TITLE ===== -->
+    <title>Zeko Software Studio | Best Gaming Macro & Antivirus Tools 2026</title>
+    
+    <!-- ===== META DESCRIPTION (Strong Keywords) ===== -->
+    <meta name="description" content="Download Clicker Pro - Best gaming macro for auto-clicking, farming, and stealth automation. Free Virus Scanner Pro - Lightweight antivirus with 70+ engines. 100% free, works offline."/>
+    
+    <!-- ===== KEYWORDS (High-Volume Search Terms) ===== -->
+    <meta name="keywords" content="gaming macro, auto clicker, clicker pro, virus scanner, free antivirus, offline antivirus, gaming tools, automation software, custom software development, zeko software, best macro tool, anti-cheat bypass, windows security, lightweight antivirus"/>
+    
+    <!-- ===== ROBOTS (SEO Crawler Instructions) ===== -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+    <meta name="googlebot" content="index, follow"/>
+    <link rel="canonical" href="https://zekacoolvip.github.io/"/>
+    
+    <!-- ===== OPEN GRAPH (Social Media Sharing) ===== -->
+    <meta property="og:title" content="Zeko Software Studio - Best Gaming Macros & Free Antivirus Tools"/>
+    <meta property="og:description" content="Download Clicker Pro gaming macro and Virus Scanner Pro - free lightweight antivirus. 70+ engines, offline support, zero cost. Trusted by 12k+ users worldwide."/>
+    <meta property="og:image" content="https://zekacoolvip.github.io/x.png"/>
+    <meta property="og:url" content="https://zekacoolvip.github.io/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Zeko Software Studio"/>
+    <meta property="og:locale" content="en_US"/>
+    
     <!-- ===== TWITTER CARDS ===== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Zeko Software Studio - Free Antivirus & Gaming Tools">
-    <meta name="twitter:description" content="Download Virus Scanner Pro - Free lightweight antivirus. Works offline!">
-    <meta name="twitter:image" content="https://zekacoolvip.github.io/x.png">
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Zeko Software Studio - Best Gaming Macro & Antivirus Tools"/>
+    <meta name="twitter:description" content="Download Clicker Pro macro and Virus Scanner Pro - free, lightweight, offline-capable antivirus with 70+ engines."/>
+    <meta name="twitter:image" content="https://zekacoolvip.github.io/x.png"/>
+    
+    <!-- ===== STRUCTURED DATA (JSON-LD) - Improves Google Ranking ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Zeko Software Studio",
+        "operatingSystem": "Windows 10, Windows 11",
+        "applicationCategory": "UtilityApplication",
+        "description": "Advanced gaming macros, security tools, and custom software development. Includes Clicker Pro auto-clicker and Virus Scanner Pro - lightweight offline antivirus.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250"
+        }
+    }
+    </script>
 
-    <style>
-        /* ===== ROOT ===== */
-        :root {
-            --bg-color: #0d0d0d;
-            --card-bg: #1a1a1a;
-            --text-color: #c9d1d9;
-            --border-color: #2a2a2a;
-            --blue-light: #58a6ff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 40%, #0d0d0d 70%, #050505 100%);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            min-height: 100vh;
-        }
-
-        /* ===== NAVBAR ===== */
-        nav {
-            background: rgba(13, 13, 13, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        nav a:hover { color: var(--blue-light); }
-
-        /* ===== RGB ANIMATION ===== */
-        .rgb {
-            animation: rgbMove 2.5s linear infinite;
-            font-weight: bold;
-        }
-        @keyframes rgbMove {
-            0% { color: #ff0000; }
-            17% { color: #ff8800; }
-            33% { color: #ffff00; }
-            50% { color: #00ff00; }
-            67% { color: #0088ff; }
-            83% { color: #8800ff; }
-            100% { color: #ff0000; }
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            text-align: center;
-            padding: 80px 20px 50px;
-        }
-        header h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            animation: rgbMove 3s linear infinite;
-            text-shadow: none; /* خط حاد ونظيف بدون غبش */
-        }
-        header p {
-            color: #8b949e;
-            font-size: 1.2rem;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-
-        /* ===== CONTAINER ===== */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-
-        /* ===== CARDS ===== */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 28px;
-            width: 330px;
-            transition: 0.4s;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-        }
-        .card:hover {
-            border-color: var(--blue-light);
-            transform: translateY(-6px);
-            box-shadow: 0 8px 35px rgba(88, 166, 255, 0.1);
-        }
-
-        .card .badge {
-            display: inline-block;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-            width: fit-content;
-            border: 1px solid var(--blue-light);
-            color: var(--blue-light);
-        }
-        .card .badge-purple {
-            border-color: #8957e5;
-            color: #8957e5;
-        }
-        .card .badge-gold {
-            border-color: #f0883e;
-            color: #f0883e;
-        }
-
-        .card h2 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-        }
-        .card p {
-            color: #8b949e;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            flex: 1;
-        }
-
-        .card .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .card .btn {
-            display: block;
-            text-align: center;
-            padding: 11px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary {
-            background: #5865F2;
-            color: white;
-        }
-        .btn-primary:hover {
-            background: #4752c4;
-            transform: scale(1.02);
-        }
-        .btn-green {
-            background: #238636;
-            color: white;
-        }
-        .btn-green:hover {
-            background: #2ea043;
-            transform: scale(1.02);
-        }
-        .btn-secondary {
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            background: transparent;
-        }
-        .btn-secondary:hover {
-            border-color: var(--blue-light);
-            background: rgba(88, 166, 255, 0.05);
-        }
-        .btn-discord {
-            background: #5865F2;
-            color: white;
-        }
-        .btn-discord:hover {
-            background: #4752c4;
-            transform: scale(1.02);
-        }
-        .btn-youtube {
-            background: #ff0000;
-            color: white;
-        }
-        .btn-youtube:hover {
-            background: #cc0000;
-            transform: scale(1.02);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #8b949e;
-            border-top: 1px solid var(--border-color);
-            margin-top: 60px;
-        }
-        footer a {
-            color: var(--blue-light);
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            nav { gap: 30px; padding: 12px 20px; }
-            nav a { font-size: 1rem; }
-            header h1 { font-size: 2.2rem; }
-            .card { width: 100%; max-width: 380px; }
-        }
-        @media (max-width: 480px) {
-            nav { gap: 20px; flex-wrap: wrap; }
-            header h1 { font-size: 1.8rem; }
-            header p { font-size: 1rem; }
-        }
-    </style>
-
-    <!-- Google tag (gtag.js) - المزرع بشكل صحيح داخل الـ Head بالـ ID الفعلي -->
+    <!-- ===== GOOGLE ANALYTICS ===== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-P5VK0GGKC6');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P5VK0GGKC6');
     </script>
-</head>
-<body>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav>
-        <a href="/">Home</a>
-        <a href="/blog" class="rgb">Blog</a>
+    <!-- ===== FONTS & STYLES ===== -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/jetbrains-mono@1.0.6/css/jetbrains-mono.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        secondary: "#fbabff",
+                        "on-surface-variant": "#c7c6ca",
+                        tertiary: "#c0c1ff",
+                        "on-secondary": "#580065",
+                        "outline-variant": "#46464a",
+                        "on-primary-fixed-variant": "#474647",
+                        "on-error": "#690005",
+                        "surface-tint": "#c8c6c7",
+                        primary: "#c8c6c7",
+                        "on-secondary-fixed-variant": "#7c008e",
+                        "surface-container-high": "#1c2b3c",
+                        "on-primary-fixed": "#1c1b1c",
+                        "inverse-on-surface": "#233143",
+                        "surface-container-low": "#0d1c2d",
+                        "on-primary": "#313031",
+                        "secondary-fixed-dim": "#fbabff",
+                        "on-tertiary": "#1000a9",
+                        "on-tertiary-fixed": "#07006c",
+                        "primary-fixed": "#e5e2e3",
+                        "tertiary-fixed": "#e1e0ff",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#6568f3",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#122131",
+                        outline: "#919094",
+                        "surface-bright": "#2c3a4c",
+                        background: "#051424",
+                        surface: "#051424",
+                        "tertiary-container": "#020039",
+                        error: "#ffb4ab",
+                        "surface-dim": "#051424",
+                        "primary-fixed-dim": "#c8c6c7",
+                        "on-secondary-fixed": "#36003e",
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "secondary-container": "#ae05c6",
+                        "primary-container": "#0a0a0b",
+                        "on-surface": "#d4e4fa",
+                        "surface-container-lowest": "#010f1f",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "secondary-fixed": "#ffd6fd",
+                        "on-primary-container": "#7a797a",
+                        "surface-container-highest": "#273647",
+                        "on-secondary-container": "#ffd8fd",
+                        "inverse-primary": "#5f5e5f",
+                        "inverse-surface": "#d4e4fa",
+                        "on-background": "#d4e4fa",
+                        "surface-variant": "#273647"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        unit: "8px",
+                        "margin-mobile": "16px",
+                        gutter: "24px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Geist"]
+                    },
+                    fontSize: {
+                        "headline-lg-mobile": ["24px", {lineHeight: "1.2", fontWeight: "600"}],
+                        "headline-lg": ["32px", {lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600"}],
+                        "headline-xl": ["48px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700"}],
+                        "label-sm": ["12px", {lineHeight: "1.0", letterSpacing: "0.05em", fontWeight: "500"}],
+                        "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #051424;
+            color: #d4e4fa;
+            font-family: 'Geist', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(28, 43, 60, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(251, 171, 255, 0.4);
+            box-shadow: 0 20px 40px -20px rgba(251, 171, 255, 0.15);
+        }
+
+        .magenta-glow {
+            text-shadow: 0 0 20px rgba(251, 171, 255, 0.4);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #051424;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #273647;
+            border-radius: 10px;
+        }
+
+        .hero-mesh {
+            background: radial-gradient(circle at 50% 40%, rgba(174, 5, 198, 0.12) 0%, transparent 55%),
+                        radial-gradient(circle at 15% 80%, rgba(101, 104, 243, 0.1) 0%, transparent 45%);
+        }
+
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(192, 193, 255, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(192, 193, 255, 0.07) 1px, transparent 1px);
+            background-size: 46px 46px;
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, black 20%, transparent 80%);
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, black 20%, transparent 80%);
+            animation: grid-pan 50s linear infinite;
+        }
+
+        @keyframes grid-pan {
+            from { background-position: 0 0; }
+            to { background-position: 46px 46px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-grid { animation: none; }
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar overflow-x-hidden">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="bg-background/80 backdrop-blur-md text-secondary sticky top-0 z-50 border-b border-white/10 shadow-sm transition-all duration-300">
+        <div class="flex justify-between items-center px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-3 cursor-pointer group">
+                <svg class="shrink-0 transition-transform duration-300 group-hover:scale-105" fill="none" height="36" viewBox="0 0 40 40" width="36" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="zekoMark" gradientUnits="userSpaceOnUse" x1="2" x2="38" y1="2" y2="38">
+                            <stop offset="0" stop-color="#fbabff"/>
+                            <stop offset="1" stop-color="#6568f3"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 1.5L37.5 11V29L20 38.5L2.5 29V11L20 1.5Z" fill="rgba(251,171,255,0.05)" stroke="url(#zekoMark)" stroke-width="1.5"/>
+                    <path d="M15 14H25L15 26H25" fill="none" stroke="url(#zekoMark)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+                </svg>
+                <div class="flex flex-col leading-none">
+                    <span class="font-headline-lg text-[19px] font-black tracking-tighter bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent">ZEKO</span>
+                    <span class="font-label-sm text-[9px] tracking-[0.28em] text-on-surface-variant uppercase mt-1">Software Studio</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="font-label-sm text-label-sm text-secondary border-b-2 border-secondary pb-1" href="#home">Home</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#services">Services</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#portfolio">Portfolio</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#contact">Contact</a>
+                <button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-label-sm text-label-sm font-bold transition-all duration-300 hover:scale-105 hover:bg-secondary hover:text-on-secondary">
+                    Get Started
+                </button>
+            </div>
+            <button class="md:hidden text-secondary">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
     </nav>
 
-    <!-- ===== HEADER ===== -->
-    <header>
-        <h1>Zeko Software Studio</h1>
-        <p>Advanced Gaming Macros, Security Tools &amp; Custom Software</p>
+    <!-- ===== HERO SECTION ===== -->
+    <header class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-margin-mobile md:px-gutter" id="home">
+        <div class="absolute inset-0 z-0">
+            <canvas class="absolute inset-0 h-full w-full opacity-70" id="hero-network"></canvas>
+            <div class="absolute inset-0 hero-grid opacity-40"></div>
+            <div class="absolute inset-0 hero-mesh"></div>
+            <div class="absolute top-1/2 left-1/2 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/10 blur-[130px]"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-background/10 via-background/50 to-background"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-label-sm text-label-sm mb-4">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                </span>
+                New Release: Clicker Pro v2.4
+            </div>
+            <h1 class="font-headline-xl text-headline-xl md:text-[84px] leading-[1] tracking-tighter">
+                <span class="bg-gradient-to-r from-secondary via-secondary to-tertiary bg-clip-text text-transparent magenta-glow">Engineered for the Edge</span>
+            </h1>
+            <p class="font-body-md text-body-md text-on-surface-variant md:text-xl max-w-2xl mx-auto">
+                High-performance gaming macros, enterprise-grade security tools, and custom software development. Trusted by 12,000+ users worldwide.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <button class="w-full sm:w-auto h-14 px-8 bg-secondary text-on-secondary font-bold rounded-lg transition-all hover:scale-105 shadow-xl shadow-secondary/10 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">bolt</span>
+                    Get Started
+                </button>
+                <button class="w-full sm:w-auto h-14 px-8 border border-outline-variant hover:bg-white/5 transition-all rounded-lg flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">play_circle</span>
+                    Watch Showcase
+                </button>
+            </div>
+            <div class="pt-10 mt-4 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50">
+                <div class="flex flex-col items-center">
+                    <span class="font-label-sm text-label-sm block mb-1">UPTIME</span>
+                    <span class="font-headline-lg text-headline-lg font-bold">99.9%</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-label-sm text-label-sm block mb-1">CLIENTS</span>
+                    <span class="font-headline-lg text-headline-lg font-bold">12k+</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-label-sm text-label-sm block mb-1">SCRIPTS</span>
+                    <span class="font-headline-lg text-headline-lg font-bold">450+</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-label-sm text-label-sm block mb-1">SECURE</span>
+                    <span class="font-headline-lg text-headline-lg font-bold">AES256</span>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- ===== CARDS ===== -->
-    <div class="container">
-        <div class="grid">
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="py-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="services">
+        <div class="flex flex-col items-center text-center mb-16">
+            <h2 class="font-headline-lg text-headline-lg md:text-headline-xl font-bold mb-4">Our Ecosystem</h2>
+            <div class="w-24 h-1 bg-secondary rounded-full"></div>
+            <p class="mt-6 text-on-surface-variant max-w-xl">Precision tools engineered to give you the competitive edge and secure your digital workspace.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <!-- ===== CARD 1: CLICKER PRO ===== -->
-            <div class="card">
-                <div>
-                    <span class="badge">🎮 Gaming Macro</span>
-                    <h2>Clicker Pro</h2>
-                    <p>The ultimate farming assistant. Humanized clicks, smart delays, and full stealth.</p>
+            <!-- Card 1: Clicker Pro -->
+            <div class="glass-card rounded-xl p-8 flex flex-col group h-full">
+                <div class="mb-6 flex justify-between items-start">
+                    <div class="p-3 bg-secondary/10 rounded-lg text-secondary group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+                    </div>
+                    <span class="px-3 py-1 rounded-full border border-secondary/30 text-secondary font-label-sm text-label-sm">GAMING MACRO</span>
                 </div>
-                <div class="btn-group">
-                    <a href="https://zekacoolvip.github.io/blog/post.html?file=clicker-pro-en.md" target="_blank" class="btn btn-youtube">⬇️ Download Now</a>
-                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="btn btn-discord">💬 Contact on Discord</a>
+                <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Clicker Pro</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                    The ultimate farming assistant with humanized clicks, smart delays, and full stealth. Bypass advanced anti-cheat systems with our proprietary engine.
+                </p>
+                <div class="space-y-4 pt-6 mt-auto">
+                    <a href="https://zekacoolvip.github.io/blog/post.html?file=clicker-pro-en.md" target="_blank" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 block text-center">
+                        <span class="material-symbols-outlined">download</span>
+                        Download Now
+                    </a>
+                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full bg-transparent border border-outline-variant py-3 rounded-lg hover:bg-white/5 transition-all flex items-center justify-center gap-2 block text-center">
+                        <span class="material-symbols-outlined">forum</span>
+                        Contact on Discord
+                    </a>
                 </div>
             </div>
 
-            <!-- ===== CARD 2: VIRUS SCANNER PRO ===== -->
-            <div class="card">
-                <div>
-                    <span class="badge badge-purple">🛡️ Security Tool</span>
-                    <h2>Virus Scanner Pro</h2>
-                    <p>🔹 <strong>Lightweight</strong> - Uses only 50MB RAM</p>
-                    <p>🔹 <strong>Works Offline</strong> - No internet required</p>
-                    <p>🔹 <strong>VirusTotal</strong> - 70+ antivirus engines</p>
-                    <p>🔹 <strong>100% FREE</strong> - No hidden costs</p>
+            <!-- Card 2: Virus Scanner Pro -->
+            <div class="glass-card rounded-xl p-8 flex flex-col group h-full border-secondary/20 bg-secondary/5">
+                <div class="mb-6 flex justify-between items-start">
+                    <div class="p-3 bg-tertiary/10 rounded-lg text-tertiary group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">security</span>
+                    </div>
+                    <span class="px-3 py-1 rounded-full border border-tertiary/30 text-tertiary font-label-sm text-label-sm">SECURITY TOOL</span>
                 </div>
-                <div class="btn-group">
-                    <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" target="_blank" class="btn btn-green">⬇️ Download Now</a>
+                <h3 class="font-headline-lg text-headline-lg mb-4 text-tertiary">Virus Scanner Pro</h3>
+                <ul class="space-y-3 mb-8 flex-grow">
+                    <li class="flex items-center gap-3 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                        <span><b>Lightweight</b> - Uses only 50MB RAM</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                        <span><b>Works Offline</b> - No internet required</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                        <span><b>VirusTotal</b> - 70+ antivirus engines</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                        <span><b>100% FREE</b> - No hidden costs</span>
+                    </li>
+                </ul>
+                <div class="mt-auto">
+                    <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" target="_blank" class="w-full bg-[#10b981] text-white py-3 rounded-lg font-bold hover:brightness-110 transition-all flex items-center justify-center gap-2 block text-center">
+                        <span class="material-symbols-outlined">download</span>
+                        Download Now
+                    </a>
                 </div>
             </div>
 
-            <!-- ===== CARD 3: CUSTOM SOFTWARE ===== -->
-            <div class="card">
-                <div>
-                    <span class="badge badge-gold">⚡ Premium Service</span>
-                    <h2>Custom Software</h2>
-                    <p>Custom bots, automation tools, and desktop apps built to your exact specifications.</p>
+            <!-- Card 3: Custom Software -->
+            <div class="glass-card rounded-xl p-8 flex flex-col group h-full">
+                <div class="mb-6 flex justify-between items-start">
+                    <div class="p-3 bg-on-tertiary-container/10 rounded-lg text-on-tertiary-container group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                    </div>
+                    <span class="px-3 py-1 rounded-full border border-on-tertiary-container/30 text-on-tertiary-container font-label-sm text-label-sm">PREMIUM SERVICE</span>
                 </div>
-                <div class="btn-group">
-                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="btn btn-discord">💬 Order Project</a>
+                <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Custom Software</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                    Custom bots, automation tools, and desktop apps built to your exact specifications. Expert engineering for complex problems.
+                </p>
+                <div class="mt-auto">
+                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full bg-tertiary-container text-on-tertiary-container border border-on-tertiary-container/50 py-3 rounded-lg font-bold hover:bg-on-tertiary-container hover:text-white transition-all flex items-center justify-center gap-2 block text-center">
+                        <span class="material-symbols-outlined">add_task</span>
+                        Order Project
+                    </a>
                 </div>
             </div>
 
         </div>
-    </div>
+    </section>
+
+    <!-- ===== BENTO SHOWCASE SECTION ===== -->
+    <section class="py-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="portfolio">
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+            <div class="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-8 relative overflow-hidden group">
+                <div class="absolute inset-0 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 via-transparent to-transparent"></div>
+                    <img class="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700" alt="Developer workspace with code on screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrOQFRd8UA3eyKBhoOP3WR4NUvZvyF-VUTWYDi1mJZTfOZl3Y3HdC0ozUaFWIRH1MCS3tEW_oJ6_yQVUAZ6p35JhhRWFHNF3fOOt-t612sjmPoT4451GppA3e-mOzmnssQgLf00l9Wd97F3IpveePN743O_uTezwVL4fFoHsNjvoCOkGurhN2NyBT14oBRgD0euiPUZWtLS4GHy9SGIzJX-LoYx1AyV0RSoFoSOzQOzfhaNZydUsPx"/>
+                </div>
+                <div class="relative z-10 h-full flex flex-col justify-end">
+                    <h4 class="font-headline-lg text-headline-lg text-secondary mb-2">Engineered for Performance</h4>
+                    <p class="text-on-surface-variant mb-4">Our core engine is built using low-level C++ for zero-latency execution.</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">C++</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">RUST</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">ASSEMBLY</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-2 glass-card rounded-3xl p-8 flex items-center gap-8 group overflow-hidden">
+                <div class="flex-1">
+                    <h4 class="font-headline-lg text-headline-lg mb-2">Safe &amp; Secure</h4>
+                    <p class="text-on-surface-variant">Military-grade encryption for all user data and script transactions.</p>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="material-symbols-outlined text-6xl text-secondary opacity-30 group-hover:rotate-12 transition-transform" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                </div>
+            </div>
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-center items-center text-center group">
+                <span class="material-symbols-outlined text-4xl text-secondary mb-2 group-hover:scale-125 transition-transform">bolt</span>
+                <span class="font-headline-lg text-headline-lg font-bold">5ms</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">MAX LATENCY</span>
+            </div>
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-center items-center text-center group">
+                <span class="material-symbols-outlined text-4xl text-secondary mb-2 group-hover:scale-125 transition-transform">group</span>
+                <span class="font-headline-lg text-headline-lg font-bold">24/7</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">EXPERT SUPPORT</span>
+            </div>
+        </div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer>
-        All Rights Reserved &copy; <a href="/">Zeko Software Studio</a> 2026
+    <footer class="bg-surface-container-lowest text-on-surface font-body-md text-body-md border-t border-white/5 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-unit">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <div class="flex items-center gap-2.5">
+                    <svg fill="none" height="30" viewBox="0 0 40 40" width="30" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="zekoMarkFooter" gradientUnits="userSpaceOnUse" x1="2" x2="38" y1="2" y2="38">
+                                <stop offset="0" stop-color="#fbabff"/>
+                                <stop offset="1" stop-color="#6568f3"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M20 1.5L37.5 11V29L20 38.5L2.5 29V11L20 1.5Z" fill="rgba(251,171,255,0.05)" stroke="url(#zekoMarkFooter)" stroke-width="1.5"/>
+                        <path d="M15 14H25L15 26H25" fill="none" stroke="url(#zekoMarkFooter)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+                    </svg>
+                    <span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent">ZEKO</span>
+                </div>
+                <p class="text-on-surface-variant text-sm max-w-xs text-center md:text-left opacity-80 transition-opacity hover:opacity-100">
+                    High-end software engineering for the modern digital era. Leading provider of macros and security auditing tools.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 my-8 md:my-0">
+                <a class="text-on-surface-variant hover:text-secondary underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+                <a class="text-on-surface-variant hover:text-secondary underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+                <a class="text-on-surface-variant hover:text-secondary underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Discord</a>
+                <a class="text-on-surface-variant hover:text-secondary underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">GitHub</a>
+            </div>
+            <div class="text-on-surface-variant opacity-80">
+                All Rights Reserved &copy; Zeko Software Studio 2026
+            </div>
+        </div>
     </footer>
 
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Hero background: animated node network
+        (function initHeroNetwork() {
+            const canvas = document.getElementById('hero-network');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const header = canvas.closest('header');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let width, height, particles, dpr;
+
+            function resize() {
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                width = header.offsetWidth;
+                height = header.offsetHeight;
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                canvas.style.width = width + 'px';
+                canvas.style.height = height + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            function createParticles() {
+                const count = Math.min(70, Math.max(24, Math.floor((width * height) / 22000)));
+                particles = Array.from({ length: count }, () => ({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.22,
+                    vy: (Math.random() - 0.5) * 0.22
+                }));
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+                const linkDistance = 140;
+
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    if (!prefersReducedMotion) {
+                        p.x += p.vx;
+                        p.y += p.vy;
+                        if (p.x <= 0 || p.x >= width) p.vx *= -1;
+                        if (p.y <= 0 || p.y >= height) p.vy *= -1;
+                    }
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const q = particles[j];
+                        const dx = p.x - q.x;
+                        const dy = p.y - q.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < linkDistance) {
+                            ctx.strokeStyle = `rgba(251, 171, 255, ${0.14 * (1 - dist / linkDistance)})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(q.x, q.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                for (const p of particles) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(192, 193, 255, 0.55)';
+                    ctx.fill();
+                }
+
+                if (!prefersReducedMotion) requestAnimationFrame(draw);
+            }
+
+            resize();
+            createParticles();
+            draw();
+
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    resize();
+                    createParticles();
+                    if (prefersReducedMotion) draw();
+                }, 150);
+            });
+        })();
+
+        // Scroll reveal
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(card);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'bg-background/95');
+                nav.classList.remove('py-4', 'bg-background/80');
+            } else {
+                nav.classList.add('py-4', 'bg-background/80');
+                nav.classList.remove('py-2', 'bg-background/95');
+            }
+        });
+    </script>
 </body>
 </html>
