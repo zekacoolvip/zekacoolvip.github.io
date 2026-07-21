@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -53,7 +55,6 @@
         }
     }
     </script>
-</head>
 
     <!-- ===== GOOGLE ANALYTICS ===== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5VK0GGKC6"></script>
@@ -82,48 +83,17 @@
                         tertiary: "#c0c1ff",
                         "on-secondary": "#580065",
                         "outline-variant": "#46464a",
-                        "on-primary-fixed-variant": "#474647",
-                        "on-error": "#690005",
-                        "surface-tint": "#c8c6c7",
-                        primary: "#c8c6c7",
-                        "on-secondary-fixed-variant": "#7c008e",
-                        "surface-container-high": "#1c2b3c",
-                        "on-primary-fixed": "#1c1b1c",
-                        "inverse-on-surface": "#233143",
-                        "surface-container-low": "#0d1c2d",
-                        "on-primary": "#313031",
-                        "secondary-fixed-dim": "#fbabff",
-                        "on-tertiary": "#1000a9",
-                        "on-tertiary-fixed": "#07006c",
-                        "primary-fixed": "#e5e2e3",
-                        "tertiary-fixed": "#e1e0ff",
-                        "error-container": "#93000a",
-                        "on-tertiary-container": "#6568f3",
-                        "on-error-container": "#ffdad6",
-                        "surface-container": "#122131",
-                        outline: "#919094",
-                        "surface-bright": "#2c3a4c",
                         background: "#051424",
                         surface: "#051424",
-                        "tertiary-container": "#020039",
-                        error: "#ffb4ab",
-                        "surface-dim": "#051424",
-                        "primary-fixed-dim": "#c8c6c7",
-                        "on-secondary-fixed": "#36003e",
-                        "tertiary-fixed-dim": "#c0c1ff",
-                        "secondary-container": "#ae05c6",
-                        "primary-container": "#0a0a0b",
-                        "on-surface": "#d4e4fa",
+                        "surface-container": "#122131",
                         "surface-container-lowest": "#010f1f",
-                        "on-tertiary-fixed-variant": "#2f2ebe",
-                        "secondary-fixed": "#ffd6fd",
-                        "on-primary-container": "#7a797a",
-                        "surface-container-highest": "#273647",
-                        "on-secondary-container": "#ffd8fd",
-                        "inverse-primary": "#5f5e5f",
-                        "inverse-surface": "#d4e4fa",
+                        "on-surface": "#d4e4fa",
                         "on-background": "#d4e4fa",
-                        "surface-variant": "#273647"
+                        "surface-variant": "#273647",
+                        "secondary-container": "#ae05c6",
+                        "on-secondary-container": "#ffd8fd",
+                        "tertiary-container": "#020039",
+                        "on-tertiary-container": "#6568f3"
                     },
                     borderRadius: {
                         DEFAULT: "0.25rem",
@@ -177,6 +147,28 @@
             box-shadow: 0 20px 40px -20px rgba(251, 171, 255, 0.15);
         }
 
+        /* تأثير لمعان خاص لـ Virus Scanner Pro */
+        .glass-card-glow {
+            background: rgba(28, 43, 60, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(251, 171, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: glowPulse 3s ease-in-out infinite;
+            box-shadow: 0 0 30px rgba(251, 171, 255, 0.1);
+        }
+
+        .glass-card-glow:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(251, 171, 255, 0.7);
+            box-shadow: 0 20px 50px -10px rgba(251, 171, 255, 0.3);
+        }
+
+        @keyframes glowPulse {
+            0% { border-color: rgba(251, 171, 255, 0.2); box-shadow: 0 0 20px rgba(251, 171, 255, 0.05); }
+            50% { border-color: rgba(251, 171, 255, 0.5); box-shadow: 0 0 40px rgba(251, 171, 255, 0.2); }
+            100% { border-color: rgba(251, 171, 255, 0.2); box-shadow: 0 0 20px rgba(251, 171, 255, 0.05); }
+        }
+
         .magenta-glow {
             text-shadow: 0 0 20px rgba(251, 171, 255, 0.4);
         }
@@ -219,6 +211,19 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
+        /* تأثير البادج الجديد */
+        .badge-new {
+            background: linear-gradient(135deg, #fbabff, #ae05c6);
+            color: #fff;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0% { box-shadow: 0 0 0 0 rgba(251, 171, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(251, 171, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(251, 171, 255, 0); }
+        }
     </style>
 </head>
 <body class="custom-scrollbar overflow-x-hidden">
@@ -248,7 +253,7 @@
                 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#portfolio">Portfolio</a>
                 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="/blog">Blog</a>
                 <a href="https://discord.com/users/zekacoolvip" target="_blank" class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-full font-label-sm text-label-sm font-bold transition-all duration-300 hover:scale-105 hover:bg-secondary hover:text-on-secondary">
-                  Get Started
+                    Get Started
                 </a>
             </div>
             <button class="md:hidden text-secondary">
@@ -275,19 +280,19 @@
                 New Release: Ultimate Deityland Auto-Hunting Bot for Trojans!
             </div>
             <h1 class="font-headline-xl text-headline-xl md:text-[84px] leading-[1] tracking-tighter">
-                <span class="bg-gradient-to-r from-secondary via-secondary to-tertiary bg-clip-text text-transparent magenta-glow">Stop Wasting Clicks Start Automating</span>
+                <span class="bg-gradient-to-r from-secondary via-secondary to-tertiary bg-clip-text text-transparent magenta-glow">Stop Wasting Clicks. Start Automating.</span>
             </h1>
             <p class="font-body-md text-body-md text-on-surface-variant md:text-xl max-w-2xl mx-auto">
-                    Specialized in building advanced automation software, custom Android applications, and high-performance desktop tools. Engineered for precision, reliability, and scalability.
+                Specialized in building advanced automation software, custom Android applications, and high-performance desktop tools. Engineered for precision, reliability, and scalability.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full sm:w-auto h-14 px-8 bg-secondary text-on-secondary font-bold rounded-lg transition-all hover:scale-105 shadow-xl shadow-secondary/10 flex items-center justify-center gap-2">
-                <span class="material-symbols-outlined">bolt</span>
-                 Get Started
-                 </a>
+                    <span class="material-symbols-outlined">bolt</span>
+                    Get Started
+                </a>
                 <a href="https://www.youtube.com/@zekacoolvip" target="_blank" class="w-full sm:w-auto h-14 px-8 border border-outline-variant hover:bg-white/5 transition-all rounded-lg flex items-center justify-center gap-2">
-                  <span class="material-symbols-outlined">play_circle</span>
-                   Watch Showcase
+                    <span class="material-symbols-outlined">play_circle</span>
+                    Watch Showcase
                 </a>
             </div>
             <div class="pt-10 mt-4 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50">
@@ -314,45 +319,25 @@
     <!-- ===== SERVICES SECTION ===== -->
     <section class="py-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="services">
         <div class="flex flex-col items-center text-center mb-16">
-            <h2 class="font-headline-lg text-headline-lg md:text-headline-xl font-bold mb-4">Our Ecosystem</h2>
+            <h2 class="font-headline-lg text-headline-lg md:text-headline-xl font-bold mb-4">⚡ Our Arsenal</h2>
             <div class="w-24 h-1 bg-secondary rounded-full"></div>
-            <p class="mt-6 text-on-surface-variant max-w-xl">Precision tools engineered to give you the competitive edge and secure your digital workspace.</p>
+            <p class="mt-6 text-on-surface-variant max-w-xl">Powerful tools engineered for speed, precision, and total control. Built to automate, protect, and optimize your digital workflow.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <!-- Card 1: Clicker Pro -->
-            <div class="glass-card rounded-xl p-8 flex flex-col group h-full">
-                <div class="mb-6 flex justify-between items-start">
-                    <div class="p-3 bg-secondary/10 rounded-lg text-secondary group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
-                    </div>
-                    <span class="px-3 py-1 rounded-full border border-secondary/30 text-secondary font-label-sm text-label-sm">GAMING MACRO</span>
+            <!-- ===== CARD 1: Virus Scanner Pro (NEW & GLOWING) ===== -->
+            <div class="glass-card-glow rounded-xl p-8 flex flex-col group h-full relative overflow-hidden">
+                <!-- تأثير "NEW" -->
+                <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider badge-new z-10">
+                    🔥 New
                 </div>
-                <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Clicker Pro</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                    The ultimate farming assistant with humanized clicks, smart delays, and full stealth. Bypass advanced anti-cheat systems with our proprietary engine.
-                </p>
-                <div class="space-y-4 pt-6 mt-auto">
-                    <a href="https://zekacoolvip.github.io/blog/post.html?file=clicker-pro-en.md" target="_blank" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 block text-center">
-                        <span class="material-symbols-outlined">download</span>
-                        Download Now
-                    </a>
-                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full bg-transparent border border-outline-variant py-3 rounded-lg hover:bg-white/5 transition-all flex items-center justify-center gap-2 block text-center">
-                        <span class="material-symbols-outlined">forum</span>
-                        Contact on Discord
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card 2: Virus Scanner Pro -->
-            <div class="glass-card rounded-xl p-8 flex flex-col group h-full border-secondary/20 bg-secondary/5">
                 <div class="mb-6 flex justify-between items-start">
-                    <div class="p-3 bg-tertiary/10 rounded-lg text-tertiary group-hover:scale-110 transition-transform">
+                    <div class="p-3 bg-secondary/20 rounded-lg text-secondary group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">security</span>
                     </div>
-                    <span class="px-3 py-1 rounded-full border border-tertiary/30 text-tertiary font-label-sm text-label-sm">SECURITY TOOL</span>
+                    <span class="px-3 py-1 rounded-full border border-secondary/40 text-secondary font-label-sm text-label-sm bg-secondary/10">SECURITY TOOL</span>
                 </div>
-                <h3 class="font-headline-lg text-headline-lg mb-4 text-tertiary">Virus Scanner Pro</h3>
+                <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Virus Scanner Pro</h3>
                 <ul class="space-y-3 mb-8 flex-grow">
                     <li class="flex items-center gap-3 text-on-surface-variant">
                         <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
@@ -379,7 +364,31 @@
                 </div>
             </div>
 
-            <!-- Card 3: Custom Software -->
+            <!-- ===== CARD 2: Clicker Pro ===== -->
+            <div class="glass-card rounded-xl p-8 flex flex-col group h-full">
+                <div class="mb-6 flex justify-between items-start">
+                    <div class="p-3 bg-secondary/10 rounded-lg text-secondary group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+                    </div>
+                    <span class="px-3 py-1 rounded-full border border-secondary/30 text-secondary font-label-sm text-label-sm">GAMING MACRO</span>
+                </div>
+                <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Clicker Pro</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                    The ultimate farming assistant with humanized clicks, smart delays, and full stealth. Bypass advanced anti-cheat systems with our proprietary engine.
+                </p>
+                <div class="space-y-4 pt-6 mt-auto">
+                    <a href="https://zekacoolvip.github.io/blog/post.html?file=clicker-pro-en.md" target="_blank" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 block text-center">
+                        <span class="material-symbols-outlined">download</span>
+                        Download Now
+                    </a>
+                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full bg-transparent border border-outline-variant py-3 rounded-lg hover:bg-white/5 transition-all flex items-center justify-center gap-2 block text-center">
+                        <span class="material-symbols-outlined">forum</span>
+                        Contact on Discord
+                    </a>
+                </div>
+            </div>
+
+            <!-- ===== CARD 3: Custom Software ===== -->
             <div class="glass-card rounded-xl p-8 flex flex-col group h-full">
                 <div class="mb-6 flex justify-between items-start">
                     <div class="p-3 bg-on-tertiary-container/10 rounded-lg text-on-tertiary-container group-hover:scale-110 transition-transform">
@@ -411,19 +420,19 @@
                     <img class="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700" alt="Developer workspace with code on screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrOQFRd8UA3eyKBhoOP3WR4NUvZvyF-VUTWYDi1mJZTfOZl3Y3HdC0ozUaFWIRH1MCS3tEW_oJ6_yQVUAZ6p35JhhRWFHNF3fOOt-t612sjmPoT4451GppA3e-mOzmnssQgLf00l9Wd97F3IpveePN743O_uTezwVL4fFoHsNjvoCOkGurhN2NyBT14oBRgD0euiPUZWtLS4GHy9SGIzJX-LoYx1AyV0RSoFoSOzQOzfhaNZydUsPx"/>
                 </div>
                 <div class="relative z-10 h-full flex flex-col justify-end">
-                    <h4 class="font-headline-lg text-headline-lg text-secondary mb-2">Our scripts are optimized for speed, accuracy, and reliability across all platforms.</h4>
-                    <p class="text-on-surface-variant mb-4">Our core engine is built using low-level C++ for zero-latency execution.</p>
+                    <h4 class="font-headline-lg text-headline-lg text-secondary mb-2">Cross-Platform Automation</h4>
+                    <p class="text-on-surface-variant mb-4">Our tools work seamlessly on Windows, macOS, Android, and web platforms.</p>
                     <div class="flex gap-2">
-                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">C++</span>
-                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">PYTHON</span>
-                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">JAVA</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">WINDOWS</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">ANDROID</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-md text-[10px] font-mono border border-white/10">WEB</span>
                     </div>
                 </div>
             </div>
             <div class="md:col-span-2 glass-card rounded-3xl p-8 flex items-center gap-8 group overflow-hidden">
                 <div class="flex-1">
-                    <h4 class="font-headline-lg text-headline-lg mb-2">Blazing Fast Execution</h4>
-                    <p class="text-on-surface-variant">Optimized for minimal latency and maximum throughput. Every millisecond counts.</p>
+                    <h4 class="font-headline-lg text-headline-lg mb-2">Safe &amp; Secure</h4>
+                    <p class="text-on-surface-variant">Military-grade encryption for all user data and script transactions.</p>
                 </div>
                 <div class="hidden sm:block">
                     <span class="material-symbols-outlined text-6xl text-secondary opacity-30 group-hover:rotate-12 transition-transform" style="font-variation-settings: 'FILL' 1;">verified_user</span>
@@ -460,10 +469,15 @@
                     <span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter bg-gradient-to-r from-secondary to-tertiary bg-clip-text text-transparent">ZEKO</span>
                 </div>
                 <p class="text-on-surface-variant text-sm max-w-xs text-center md:text-left opacity-80 transition-opacity hover:opacity-100">
-                    High-end software engineering for the modern digital era. Leading provider of macros and security auditing tools.
+                    High-end software engineering for the modern digital era. Leading provider of automation and security tools.
                 </p>
             </div>
-            
+            <div class="flex flex-wrap justify-center gap-8 my-4 md:my-0">
+                <a class="text-on-surface-variant hover:text-secondary underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="https://discord.com/users/zekacoolvip" target="_blank">Discord</a>
+            </div>
+            <div class="text-on-surface-variant opacity-80">
+                All Rights Reserved &copy; Zeko Software Studio 2026
+            </div>
         </div>
     </footer>
 
@@ -564,7 +578,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.glass-card').forEach(card => {
+        document.querySelectorAll('.glass-card, .glass-card-glow').forEach(card => {
             card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
             observer.observe(card);
         });
