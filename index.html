@@ -147,7 +147,7 @@
             box-shadow: 0 20px 40px -20px rgba(251, 171, 255, 0.15);
         }
 
-        /* تأثير لمعان خاص لـ Virus Scanner Pro */
+        /* تأثير لمعان خاص لـ Clicker Pro (البطاقة الأولى) */
         .glass-card-glow {
             background: rgba(28, 43, 60, 0.5);
             backdrop-filter: blur(12px);
@@ -224,6 +224,82 @@
             70% { box-shadow: 0 0 0 10px rgba(251, 171, 255, 0); }
             100% { box-shadow: 0 0 0 0 rgba(251, 171, 255, 0); }
         }
+
+        /* ===== تأثيرات جديدة ===== */
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .shine-effect:hover::after {
+            left: 100%;
+        }
+
+        .bounce-in {
+            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .pulse-btn {
+            animation: pulseBtn 2s infinite;
+        }
+        @keyframes pulseBtn {
+            0% { box-shadow: 0 0 0 0 rgba(251, 171, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(251, 171, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(251, 171, 255, 0); }
+        }
+
+        .float-anim {
+            animation: floatAnim 4s ease-in-out infinite;
+        }
+        @keyframes floatAnim {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .clicker-banner {
+            position: relative;
+            background: linear-gradient(135deg, rgba(174, 5, 198, 0.15), rgba(101, 104, 243, 0.1));
+            border: 2px solid rgba(251, 171, 255, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .clicker-banner:hover {
+            border-color: rgba(251, 171, 255, 0.8);
+            box-shadow: 0 0 40px rgba(251, 171, 255, 0.2);
+        }
+        .clicker-banner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .clicker-banner-content {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body class="custom-scrollbar overflow-x-hidden">
@@ -286,7 +362,7 @@
                 Specialized in building advanced automation software, custom Android applications, and high-performance desktop tools. Engineered for precision, reliability, and scalability.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full sm:w-auto h-14 px-8 bg-secondary text-on-secondary font-bold rounded-lg transition-all hover:scale-105 shadow-xl shadow-secondary/10 flex items-center justify-center gap-2">
+                <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full sm:w-auto h-14 px-8 bg-secondary text-on-secondary font-bold rounded-lg transition-all hover:scale-105 shadow-xl shadow-secondary/10 flex items-center justify-center gap-2 pulse-btn">
                     <span class="material-symbols-outlined">bolt</span>
                     Get Started
                 </a>
@@ -323,63 +399,28 @@
             <div class="w-24 h-1 bg-secondary rounded-full"></div>
             <p class="mt-6 text-on-surface-variant max-w-xl">Powerful tools engineered for speed, precision, and total control. Built to automate, protect, and optimize your digital workflow.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <!-- ===== CARD 1: Virus Scanner Pro (NEW & GLOWING) ===== -->
-            <div class="glass-card-glow rounded-xl p-8 flex flex-col group h-full relative overflow-hidden">
+            <!-- ===== CARD 1: Clicker Pro (NEW & GLOWING) ===== -->
+            <div class="glass-card-glow rounded-xl p-8 flex flex-col group h-full relative overflow-hidden shine-effect bounce-in">
                 <!-- تأثير "NEW" -->
                 <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider badge-new z-10">
                     🔥 New
                 </div>
                 <div class="mb-6 flex justify-between items-start">
                     <div class="p-3 bg-secondary/20 rounded-lg text-secondary group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">security</span>
-                    </div>
-                    <span class="px-3 py-1 rounded-full border border-secondary/40 text-secondary font-label-sm text-label-sm bg-secondary/10">SECURITY TOOL</span>
-                </div>
-                <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Virus Scanner Pro</h3>
-                <ul class="space-y-3 mb-8 flex-grow">
-                    <li class="flex items-center gap-3 text-on-surface-variant">
-                        <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-                        <span><b>Lightweight</b> - Uses only 50MB RAM</span>
-                    </li>
-                    <li class="flex items-center gap-3 text-on-surface-variant">
-                        <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-                        <span><b>Works Offline</b> - No internet required</span>
-                    </li>
-                    <li class="flex items-center gap-3 text-on-surface-variant">
-                        <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-                        <span><b>VirusTotal</b> - 70+ antivirus engines</span>
-                    </li>
-                    <li class="flex items-center gap-3 text-on-surface-variant">
-                        <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-                        <span><b>100% FREE</b> - No hidden costs</span>
-                    </li>
-                </ul>
-                <div class="mt-auto">
-                    <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" target="_blank" class="w-full bg-[#10b981] text-white py-3 rounded-lg font-bold hover:brightness-110 transition-all flex items-center justify-center gap-2 block text-center">
-                        <span class="material-symbols-outlined">download</span>
-                        Download Now
-                    </a>
-                </div>
-            </div>
-
-            <!-- ===== CARD 2: Clicker Pro ===== -->
-            <div class="glass-card rounded-xl p-8 flex flex-col group h-full">
-                <div class="mb-6 flex justify-between items-start">
-                    <div class="p-3 bg-secondary/10 rounded-lg text-secondary group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
                     </div>
-                    <span class="px-3 py-1 rounded-full border border-secondary/30 text-secondary font-label-sm text-label-sm">GAMING MACRO</span>
+                    <span class="px-3 py-1 rounded-full border border-secondary/40 text-secondary font-label-sm text-label-sm bg-secondary/10">GAMING MACRO</span>
                 </div>
                 <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Clicker Pro</h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
                     The ultimate farming assistant with humanized clicks, smart delays, and full stealth. Bypass advanced anti-cheat systems with our proprietary engine.
                 </p>
                 <div class="space-y-4 pt-6 mt-auto">
-                    <a href="https://zekacoolvip.github.io/blog/post.html?file=clicker-pro-en.md" target="_blank" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 block text-center">
-                        <span class="material-symbols-outlined">download</span>
-                        Download Now
+                    <a href="https://zekacoolvip.github.io/blog/post.html?file=ClickerPro.md" target="_blank" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 block text-center pulse-btn">
+                        <span class="material-symbols-outlined">info</span>
+                        Learn More
                     </a>
                     <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full bg-transparent border border-outline-variant py-3 rounded-lg hover:bg-white/5 transition-all flex items-center justify-center gap-2 block text-center">
                         <span class="material-symbols-outlined">forum</span>
@@ -388,26 +429,41 @@
                 </div>
             </div>
 
-            <!-- ===== CARD 3: Custom Software ===== -->
-            <div class="glass-card rounded-xl p-8 flex flex-col group h-full">
+            <!-- ===== CARD 2: Virus Scanner Pro ===== -->
+            <div class="glass-card rounded-xl p-8 flex flex-col group h-full bounce-in" style="animation-delay: 0.2s;">
                 <div class="mb-6 flex justify-between items-start">
-                    <div class="p-3 bg-on-tertiary-container/10 rounded-lg text-on-tertiary-container group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                    <div class="p-3 bg-secondary/10 rounded-lg text-secondary group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">security</span>
                     </div>
-                    <span class="px-3 py-1 rounded-full border border-on-tertiary-container/30 text-on-tertiary-container font-label-sm text-label-sm">PREMIUM SERVICE</span>
+                    <span class="px-3 py-1 rounded-full border border-secondary/30 text-secondary font-label-sm text-label-sm">SECURITY TOOL</span>
                 </div>
-                <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Custom Software</h3>
+                <h3 class="font-headline-lg text-headline-lg mb-4 text-secondary">Virus Scanner Pro</h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                    Custom bots, automation tools, and desktop apps built to your exact specifications. Expert engineering for complex problems.
+                    Lightweight, offline-capable antivirus scanner. Uses 50MB RAM, integrates with VirusTotal (70+ engines), and is completely free.
                 </p>
-                <div class="mt-auto">
-                    <a href="https://discord.com/users/zekacoolvip" target="_blank" class="w-full bg-tertiary-container text-on-tertiary-container border border-on-tertiary-container/50 py-3 rounded-lg font-bold hover:bg-on-tertiary-container hover:text-white transition-all flex items-center justify-center gap-2 block text-center">
-                        <span class="material-symbols-outlined">add_task</span>
-                        Order Project
+                <div class="space-y-4 pt-6 mt-auto">
+                    <a href="https://www.mediafire.com/file/buamf0lcdywca0b/VirusScannerPro.rar/file" target="_blank" class="w-full bg-[#10b981] text-white py-3 rounded-lg font-bold hover:brightness-110 transition-all flex items-center justify-center gap-2 block text-center">
+                        <span class="material-symbols-outlined">download</span>
+                        Download Now
                     </a>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- ===== CLICKER PRO BANNER SECTION ===== -->
+    <section class="py-12 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+        <div class="clicker-banner float-anim">
+            <img src="123.png" alt="Clicker Pro Interface">
+            <div class="clicker-banner-content text-center">
+                <h3 class="font-headline-lg text-headline-lg text-secondary mb-2">Clicker Pro v4.0 is Here!</h3>
+                <p class="text-on-surface-variant mb-4 max-w-lg mx-auto">Experience the ultimate in automated farming. Custom speeds, humanized clicks, and total stealth.</p>
+                <a href="https://zekacoolvip.github.io/blog/post.html?file=ClickerPro.md" target="_blank" class="inline-flex items-center gap-2 bg-secondary text-on-secondary px-6 py-3 rounded-lg font-bold hover:scale-105 transition-all pulse-btn">
+                    <span class="material-symbols-outlined">info</span>
+                    Learn More
+                </a>
+            </div>
         </div>
     </section>
 
