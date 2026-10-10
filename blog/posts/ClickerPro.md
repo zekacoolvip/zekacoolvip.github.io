@@ -25,7 +25,7 @@ tags: [Clicker Pro, Conquer Online, Macro, Farming, Auto Clicker, Safe]
 <div align="center">
 
 
-| 🇪🇬 **Egyptian Plan** | **120 EGP / Month** | Local Players |
+| 🇪🇬 **Egyptian Plan** | **150 EGP / Month** | Local Players |
 | 🌍 **Global Plan** | **$1.99 USD / Month** | International Players |
 
 *(Why pay more? Get full access for the price of a coffee!)*
